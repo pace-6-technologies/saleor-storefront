@@ -1,6 +1,7 @@
 import "./scss/index.scss";
-
+import "@builder.io/widgets";
 import classNames from "classnames";
+import { BuilderComponent, builder } from "@builder.io/react";
 import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
@@ -17,6 +18,8 @@ import {
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 
 import noPhotoImg from "../../images/no-photo.svg";
+
+builder.init("1cce8ca4775b4e74ae84482a92681b4f");
 
 const Page: React.FC<{
   loading: boolean;
@@ -36,13 +39,15 @@ const Page: React.FC<{
       </script>
       <div
         className="home-page__hero"
-        style={
-          backgroundImage
-            ? { backgroundImage: `url(${backgroundImage.url})` }
-            : null
-        }
+        // style={
+        //   backgroundImage
+        //     ? { backgroundImage: `url(${backgroundImage.url})` }
+        //     : null
+        // }
       >
-        <div className="home-page__hero-text">
+        <BuilderComponent model="page" />
+
+        {/* <div className="home-page__hero-text">
           <div>
             <span className="home-page__hero__title">
               <h1>
@@ -57,7 +62,7 @@ const Page: React.FC<{
               </h1>
             </span>
           </div>
-        </div>
+        </div> */}
         <div className="home-page__hero-action">
           {loading && !categories ? (
             <Loader />
