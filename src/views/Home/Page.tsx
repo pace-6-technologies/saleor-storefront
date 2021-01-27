@@ -4,9 +4,9 @@ import classNames from "classnames";
 import { BuilderComponent, builder } from "@builder.io/react";
 import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
-import { Button, Loader, ProductsFeatured } from "../../components";
+import { Loader, ProductsFeatured } from "../../components";
 import { generateCategoryUrl } from "../../core/utils";
 
 import {
@@ -31,7 +31,7 @@ const Page: React.FC<{
     return categories && categories.edges && categories.edges.length > 0;
   };
   const intl = useIntl();
-
+  const history = useHistory();
   return (
     <>
       <script className="structured-data-list" type="application/ld+json">
@@ -39,13 +39,21 @@ const Page: React.FC<{
       </script>
       <div
         className="home-page__hero"
-        // style={
-        //   backgroundImage
-        //     ? { backgroundImage: `url(${backgroundImage.url})` }
-        //     : null
-        // }
+        style={
+          backgroundImage
+            ? { backgroundImage: `url(${backgroundImage.url})` }
+            : null
+        }
       >
-        <BuilderComponent model="page" />
+        <div className="banner-hero">
+          <BuilderComponent
+            model="page"
+            data={{
+              handleClick: () =>
+                history.push("/product/space-dust-navy-paint/62/"),
+            }}
+          />
+        </div>
 
         {/* <div className="home-page__hero-text">
           <div>
@@ -64,22 +72,23 @@ const Page: React.FC<{
           </div>
         </div> */}
         <div className="home-page__hero-action">
-          {loading && !categories ? (
-            <Loader />
-          ) : (
-            categoriesExist() && (
-              <Link
-                to={generateCategoryUrl(
-                  categories.edges[0].node.id,
-                  categories.edges[0].node.name
-                )}
-              >
-                <Button testingContext="homepageHeroActionButton">
-                  <FormattedMessage defaultMessage="Shop sale" />
-                </Button>
-              </Link>
-            )
-          )}
+          {
+            loading && !categories && <Loader />
+            //  : (
+            //   categoriesExist() && (
+            //     <Link
+            //       to={generateCategoryUrl(
+            //         categories.edges[0].node.id,
+            //         categories.edges[0].node.name
+            //       )}
+            //     >
+            //       <Button testingContext="homepageHeroActionButton">
+            //         <FormattedMessage defaultMessage="Shop sale" />
+            //       </Button>
+            //     </Link>
+            //   )
+            // )
+          }
         </div>
       </div>
       <ProductsFeatured
