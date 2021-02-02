@@ -8,6 +8,8 @@
   "browserslist": "last 2 versions",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
+    "@builder.io/react": "^1.1.33",
+    "@builder.io/widgets": "^1.2.19",
     "@editorjs/editorjs": "^2.19.0",
     "@editorjs/header": "^2.6.0",
     "@editorjs/image": "^2.6.0",
