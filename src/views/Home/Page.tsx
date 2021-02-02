@@ -1,12 +1,13 @@
 import "./scss/index.scss";
 
-import classNames from "classnames";
+// import classNames from "classnames";
 import * as React from "react";
-import { FormattedMessage, useIntl } from "react-intl";
-import { Link } from "react-router-dom";
+// import { FormattedMessage, useIntl } from "react-intl";
+// import { Link } from "react-router-dom";
 
-import { Button, Loader, ProductsFeatured } from "../../components";
-import { generateCategoryUrl } from "../../core/utils";
+import { builder, BuilderComponent } from "@builder.io/react";
+// import { Button, Loader, ProductsFeatured } from "../../components";
+// import { generateCategoryUrl } from "../../core/utils";
 
 import {
   ProductsList_categories,
@@ -16,7 +17,9 @@ import {
 
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 
-import noPhotoImg from "../../images/no-photo.svg";
+// import noPhotoImg from "../../images/no-photo.svg";
+
+builder.init("1cce8ca4775b4e74ae84482a92681b4f");
 
 const Page: React.FC<{
   loading: boolean;
@@ -24,17 +27,18 @@ const Page: React.FC<{
   backgroundImage: ProductsList_collection_backgroundImage;
   shop: ProductsList_shop;
 }> = ({ loading, categories, backgroundImage, shop }) => {
-  const categoriesExist = () => {
-    return categories && categories.edges && categories.edges.length > 0;
-  };
-  const intl = useIntl();
+  // const categoriesExist = () => {
+  //   return categories && categories.edges && categories.edges.length > 0;
+  // };
+  // const intl = useIntl();
 
   return (
     <>
       <script className="structured-data-list" type="application/ld+json">
         {structuredData(shop)}
       </script>
-      <div
+      <BuilderComponent model="page" />
+      {/* <div
         className="home-page__hero"
         style={
           backgroundImage
@@ -115,7 +119,7 @@ const Page: React.FC<{
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
