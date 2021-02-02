@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { commonMessages } from "@temp/intl";
 import { useAuth, useCart } from "@saleor/sdk";
-
+import { builder, BuilderComponent } from "@builder.io/react";
 import Media from "react-media";
 import { Link } from "react-router-dom";
 import ReactSVG from "react-svg";
@@ -26,7 +26,7 @@ import { TypedMainMenuQuery } from "./queries";
 import cartImg from "../../images/cart.svg";
 import hamburgerHoverImg from "../../images/hamburger-hover.svg";
 import hamburgerImg from "../../images/hamburger.svg";
-import logoImg from "../../images/logo.svg";
+// import logoImg from "../../images/logo.svg";
 import searchImg from "../../images/search.svg";
 import userImg from "../../images/user.svg";
 import {
@@ -34,6 +34,8 @@ import {
   smallScreen,
 } from "../../globalStyles/scss/variables.scss";
 import "./scss/index.scss";
+
+builder.init("1cce8ca4775b4e74ae84482a92681b4f");
 
 interface MainMenuProps {
   demoMode: boolean;
@@ -223,7 +225,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
 
         <div className="main-menu__center">
           <Link to={appPaths.baseUrl}>
-            <ReactSVG path={logoImg} />
+            <BuilderComponent model="section" />
+            {/* <ReactSVG path={logoImg} /> */}
           </Link>
         </div>
 

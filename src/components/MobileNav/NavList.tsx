@@ -5,13 +5,15 @@ import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import ReactSVG from "react-svg";
 import { commonMessages } from "@temp/intl";
+import { builder, BuilderComponent } from "@builder.io/react";
 
 import { baseUrl } from "../../app/routes";
 import NavItem, { INavItem } from "./NavItem";
 
 import backImg from "../../images/arrow-back.svg";
-import logoImg from "../../images/logo.svg";
+// import logoImg from "../../images/logo.svg";
 
+builder.init("1cce8ca4775b4e74ae84482a92681b4f");
 interface NavListProps {
   items: INavItem[];
   hideOverlay(): void;
@@ -79,7 +81,8 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
                 className="side-nav__menu-item-logo"
                 onClick={hideOverlay}
               >
-                <ReactSVG path={logoImg} />
+                <BuilderComponent model="section" />
+                {/* <ReactSVG path={logoImg} /> */}
               </Link>
               <span className="side-nav__menu-item-close" onClick={hideOverlay}>
                 <span />
