@@ -6,11 +6,11 @@ import { useAuth, useCart } from "@saleor/sdk";
 import Media from "react-media";
 import { Link } from "react-router-dom";
 import ReactSVG from "react-svg";
+import { channelSlug, builderIoApiKey } from "@temp/constants";
 import { builder, BuilderComponent } from "@builder.io/react";
 
 import { DemoBanner } from "@components/atoms";
 import classNames from "classnames";
-import { channelSlug } from "@temp/constants";
 import {
   MenuDropdown,
   Offline,
@@ -36,7 +36,7 @@ import {
 } from "../../globalStyles/scss/variables.scss";
 import "./scss/index.scss";
 
-builder.init("1cce8ca4775b4e74ae84482a92681b4f");
+builder.init(builderIoApiKey as string);
 
 interface MainMenuProps {
   demoMode: boolean;
