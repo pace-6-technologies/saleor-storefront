@@ -8,6 +8,7 @@ import Media from "react-responsive";
 import { Icon, NavLink } from "@components/atoms";
 import { largeScreen, smallScreen } from "@styles/constants";
 import { maybe } from "@utils/misc";
+import { builderIoApiKey } from "@temp/constants";
 import { builder, BuilderComponent } from "@builder.io/react";
 
 // import LogoSmall from "images/logo-small.svg";
@@ -17,7 +18,7 @@ import { Dropdown } from "./Dropdown";
 import * as S from "./styles";
 import { IProps } from "./types";
 
-builder.init("1cce8ca4775b4e74ae84482a92681b4f");
+builder.init(builderIoApiKey as string);
 
 const menuVisibleRatio = 0.8;
 const getElementWidth = (node: Element) => node.scrollWidth;

@@ -5,6 +5,8 @@ import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import ReactSVG from "react-svg";
 import { commonMessages } from "@temp/intl";
+
+import { builderIoApiKey } from "@temp/constants";
 import { builder, BuilderComponent } from "@builder.io/react";
 
 import { baseUrl } from "../../app/routes";
@@ -13,7 +15,7 @@ import NavItem, { INavItem } from "./NavItem";
 import backImg from "../../images/arrow-back.svg";
 // import logoImg from "../../images/logo.svg";
 
-builder.init("1cce8ca4775b4e74ae84482a92681b4f");
+builder.init(builderIoApiKey as string);
 
 interface NavListProps {
   items: INavItem[];
