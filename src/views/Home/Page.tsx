@@ -6,6 +6,7 @@ import * as React from "react";
 // import { FormattedMessage, useIntl } from "react-intl";
 // import { Link } from "react-router-dom";
 import { BuilderComponent, builder } from "@builder.io/react";
+import { builderIoApiKey } from "@temp/constants";
 
 // import { Button, Loader, ProductsFeatured } from "../../components";
 // import { generateCategoryUrl } from "../../core/utils";
@@ -20,7 +21,7 @@ import { structuredData } from "../../core/SEO/Homepage/structuredData";
 
 // import noPhotoImg from "../../images/no-photo.svg";
 
-builder.init("1cce8ca4775b4e74ae84482a92681b4f");
+builder.init(builderIoApiKey as string);
 
 const Page: React.FC<{
   loading: boolean;
