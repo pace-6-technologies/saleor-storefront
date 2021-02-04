@@ -8,13 +8,17 @@ import Media from "react-responsive";
 import { Icon, NavLink } from "@components/atoms";
 import { largeScreen, smallScreen } from "@styles/constants";
 import { maybe } from "@utils/misc";
+import { builderIoApiKey } from "@temp/constants";
+import { builder, BuilderComponent } from "@builder.io/react";
 
-import LogoSmall from "images/logo-small.svg";
-import Logo from "images/logo.svg";
+// import LogoSmall from "images/logo-small.svg";
+// import Logo from "images/logo.svg";
 
 import { Dropdown } from "./Dropdown";
 import * as S from "./styles";
 import { IProps } from "./types";
+
+builder.init(builderIoApiKey as string);
 
 const menuVisibleRatio = 0.8;
 const getElementWidth = (node: Element) => node.scrollWidth;
@@ -112,10 +116,14 @@ export const TopNavbar: React.FC<IProps> = ({ items }: IProps) => {
         </S.Navigation>
         <S.Center>
           <Media maxWidth={smallScreen}>
-            <S.LogoWrapper path={LogoSmall} />
+            <BuilderComponent model="section" />
+
+            {/* <S.LogoWrapper path={LogoSmall} /> */}
           </Media>
           <Media minWidth={smallScreen}>
-            <S.LogoWrapper path={Logo} />
+            <BuilderComponent model="section" />
+
+            {/* <S.LogoWrapper path={Logo} /> */}
           </Media>
         </S.Center>
         <S.Actions>

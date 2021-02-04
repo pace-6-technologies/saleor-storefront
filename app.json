@@ -9,6 +9,10 @@
     "API_URI": {
       "description": "URI of a running instance of Saleor GraphQL API",
       "value": "https://demo.saleor.io/graphql/"
+    },
+    "BUILDER_IO_API_KEY": {
+      "description": "Builder.io public API key",
+      "value": "5cff8746a2094edca99c3267416e14d0"
     }
   },
   "buildpacks": [

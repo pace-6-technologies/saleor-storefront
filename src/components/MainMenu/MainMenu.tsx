@@ -6,10 +6,11 @@ import { useAuth, useCart } from "@saleor/sdk";
 import Media from "react-media";
 import { Link } from "react-router-dom";
 import ReactSVG from "react-svg";
+import { channelSlug, builderIoApiKey } from "@temp/constants";
+import { builder, BuilderComponent } from "@builder.io/react";
 
 import { DemoBanner } from "@components/atoms";
 import classNames from "classnames";
-import { channelSlug } from "@temp/constants";
 import {
   MenuDropdown,
   Offline,
@@ -26,7 +27,7 @@ import { TypedMainMenuQuery } from "./queries";
 import cartImg from "../../images/cart.svg";
 import hamburgerHoverImg from "../../images/hamburger-hover.svg";
 import hamburgerImg from "../../images/hamburger.svg";
-import logoImg from "../../images/logo.svg";
+// import logoImg from "../../images/logo.svg";
 import searchImg from "../../images/search.svg";
 import userImg from "../../images/user.svg";
 import {
@@ -34,6 +35,8 @@ import {
   smallScreen,
 } from "../../globalStyles/scss/variables.scss";
 import "./scss/index.scss";
+
+builder.init(builderIoApiKey as string);
 
 interface MainMenuProps {
   demoMode: boolean;
@@ -223,7 +226,9 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
 
         <div className="main-menu__center">
           <Link to={appPaths.baseUrl}>
-            <ReactSVG path={logoImg} />
+            <BuilderComponent model="section" />
+
+            {/* <ReactSVG path={logoImg} /> */}
           </Link>
         </div>
 

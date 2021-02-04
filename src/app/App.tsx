@@ -4,7 +4,7 @@ import { useAuth } from "@saleor/sdk";
 import { Loader } from "@components/atoms";
 import { demoMode } from "@temp/constants";
 import {
-  Footer,
+  // Footer,
   MainMenu,
   MetaConsumer,
   OverlayManager,
@@ -28,7 +28,7 @@ const App: React.FC = () => {
         <MetaConsumer />
         <MainMenu demoMode={demoMode} />
         <Routes />
-        <Footer />
+        {/* <Footer /> */}
         <OverlayManager />
         <Notifications />
       </OverlayProvider>
