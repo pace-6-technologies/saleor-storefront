@@ -50,3 +50,19 @@ export const getCollectionsQuery = gql`
     }
   }
 `;
+
+export const getAddressQuery = gql`
+  query getAddressQuery($zipcode: String) {
+    regions(first: 50, zipcode: $zipcode) {
+      edges {
+        node {
+          zipcode
+          province
+          city
+          district
+          id
+        }
+      }
+    }
+  }
+`;

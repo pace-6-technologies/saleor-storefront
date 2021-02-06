@@ -64,7 +64,7 @@ const CheckoutAddress: React.FC<IProps> = ({
                 testingContext="shippingAddressForm"
                 formId={shippingFormId}
                 formRef={shippingFormRef}
-                countriesOptions={countries?.filter(filterNotEmptyArrayItems)}
+                // countriesOptions={countries?.filter(filterNotEmptyArrayItems)}
                 address={{
                   ...checkoutShippingAddress,
                   email,

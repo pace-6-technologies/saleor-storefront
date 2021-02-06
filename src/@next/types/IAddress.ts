@@ -6,9 +6,12 @@ export interface IAddress {
   streetAddress1?: string;
   streetAddress2?: string;
   city?: string;
+  province?: string;
+  amphoe?: string;
+  district?: any;
   postalCode?: string;
   countryArea?: string;
-  phone?: string | null;
+  phone?: any | null;
   country?: {
     code?: string;
     country?: string;

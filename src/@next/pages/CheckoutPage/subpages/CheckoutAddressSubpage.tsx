@@ -1,7 +1,7 @@
 import React, {
   forwardRef,
   RefForwardingComponent,
-  useContext,
+  // useContext,
   useImperativeHandle,
   useRef,
   useState,
@@ -12,7 +12,7 @@ import { RouteComponentProps } from "react-router";
 
 import { CheckoutAddress } from "@components/organisms";
 import { useAuth, useCheckout, useCart } from "@saleor/sdk";
-import { ShopContext } from "@temp/components/ShopProvider/context";
+// import { ShopContext } from "@temp/components/ShopProvider/context";
 import { commonMessages } from "@temp/intl";
 import { IAddress, IFormError } from "@types";
 import { filterNotEmptyArrayItems } from "@utils/misc";
@@ -47,7 +47,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
     setBillingAsShippingAddress,
   } = useCheckout();
   const { items } = useCart();
-  const { countries } = useContext(ShopContext);
+  // const { countries } = useContext(ShopContext);
 
   const [shippingErrors, setShippingErrors] = useState<IFormError[]>([]);
   const [billingErrors, setBillingErrors] = useState<IFormError[]>([]);
@@ -118,18 +118,59 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideEmailAddress),
         },
       ]);
-      return;
     }
 
+    if (!address?.district) {
+      setShippingErrors([
+        {
+          field: "district",
+          message: intl.formatMessage(commonMessages.provideDistrictAddress),
+        },
+      ]);
+    }
+
+    if (!address?.phone) {
+      setShippingErrors([
+        {
+          field: "phone",
+          message: intl.formatMessage(commonMessages.providePhoneAddress),
+        },
+      ]);
+    }
+
+    if (!address?.lastName) {
+      setShippingErrors([
+        {
+          field: "lastName",
+          message: intl.formatMessage(commonMessages.provideLastNameAddress),
+        },
+      ]);
+    }
+
+    if (!address?.firstName) {
+      setShippingErrors([
+        {
+          field: "firstName",
+          message: intl.formatMessage(commonMessages.provideFirstNameAddress),
+        },
+      ]);
+    }
+    const assignObjectAddress = {
+      ...address,
+      district: address?.district.district,
+    };
+    // console.log("ShippingAddress :", assignObjectAddress);
     changeSubmitProgress(true);
     const { dataError } = await setShippingAddress(
       {
-        ...address,
+        // ...address,
+        ...assignObjectAddress,
         id: userAddressId,
       },
       shippingEmail
     );
     const errors = dataError?.error;
+    // console.log("errors :", errors);
     if (errors) {
       setShippingErrors(errors);
       changeSubmitProgress(false);
@@ -177,6 +218,47 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       return;
     }
 
+    if (!address?.district) {
+      setShippingErrors([
+        {
+          field: "district",
+          message: intl.formatMessage(commonMessages.provideDistrictAddress),
+        },
+      ]);
+    }
+
+    if (!address?.phone) {
+      setShippingErrors([
+        {
+          field: "phone",
+          message: intl.formatMessage(commonMessages.providePhoneAddress),
+        },
+      ]);
+    }
+
+    if (!address?.lastName) {
+      setShippingErrors([
+        {
+          field: "lastName",
+          message: intl.formatMessage(commonMessages.provideLastNameAddress),
+        },
+      ]);
+    }
+
+    if (!address?.firstName) {
+      setShippingErrors([
+        {
+          field: "firstName",
+          message: intl.formatMessage(commonMessages.provideFirstNameAddress),
+        },
+      ]);
+    }
+
+    const assignObjectAddress = {
+      ...address,
+      district: address?.district.district,
+    };
+    // console.log("BillingAddress :", assignObjectAddress);
     let errors;
     changeSubmitProgress(true);
     if (billingAsShippingState && isShippingRequiredForProducts) {
@@ -185,7 +267,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
     } else {
       const { dataError } = await setBillingAddress(
         {
-          ...address,
+          ...assignObjectAddress,
           id: userAddressId,
         },
         billingEmail
@@ -230,7 +312,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       userAddresses={userAdresses}
       selectedUserShippingAddressId={selectedShippingAddressId}
       selectedUserBillingAddressId={selectedBillingAddressId}
-      countries={countries}
+      // countries={countries}
       userId={user?.id}
       newAddressFormId={checkoutNewAddressFormId}
       shippingAddressRequired={!!isShippingRequiredForProducts}
