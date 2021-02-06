@@ -116,12 +116,12 @@ export const TopNavbar: React.FC<IProps> = ({ items }: IProps) => {
         </S.Navigation>
         <S.Center>
           <Media maxWidth={smallScreen}>
-            <BuilderComponent model="section" />
+            <BuilderComponent model="logo" />
 
             {/* <S.LogoWrapper path={LogoSmall} /> */}
           </Media>
           <Media minWidth={smallScreen}>
-            <BuilderComponent model="section" />
+            <BuilderComponent model="logo" />
 
             {/* <S.LogoWrapper path={Logo} /> */}
           </Media>
