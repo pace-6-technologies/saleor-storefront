@@ -52,8 +52,8 @@ export const getCollectionsQuery = gql`
 `;
 
 export const getAddressQuery = gql`
-  query getAddressQuery($zipcode: String) {
-    regions(first: 50, zipcode: $zipcode) {
+  query getAddressQuery($zipcode: String, $city: String) {
+    regions(first: 50, zipcode: $zipcode, city: $city) {
       edges {
         node {
           zipcode

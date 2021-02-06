@@ -8,9 +8,9 @@ import { IProps } from "./types";
 
 const ADDRESS_FIELDS = [
   "province",
-  "amphoe",
+  // "amphoe",
   "district",
-  // "city",
+  "city",
   "companyName",
   // "countryArea",
   "firstName",

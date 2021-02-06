@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useIntl } from "react-intl";
-import { debounce } from "lodash";
+import { debounce, uniqBy } from "lodash";
 
 import { InputSelect, TextField } from "@components/molecules";
 import { commonMessages } from "@temp/intl";
@@ -31,6 +31,9 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
   const intl = useIntl();
   const fieldErrors: any = {};
   const [listAddress, setListAddress] = useState([]);
+  const [listDistrict, setListDistrict] = useState([]);
+  const [isHaveCity, setIsHaveCity] = useState(false);
+
   if (errors) {
     errors.map(({ field, message }: { field: string; message: string }) => {
       fieldErrors[field] = fieldErrors[field]
@@ -45,20 +48,35 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
         callback: (response: any) => {
           // console.log("response :", response);
           if (response.length > 0 && zipcode.length === 5) {
-            setListAddress(response as any);
+            // setListAddress(response as any);
+            setListAddress(uniqBy(response, "city") as any);
             setFieldValue("province", response[0].province);
-            setFieldValue("amphoe", response[0].city);
+            setFieldValue("city", "");
             setFieldValue("district", "");
+            setIsHaveCity(false);
           }
         },
       });
       return true;
     }
+    setIsHaveCity(false);
     setListAddress([]);
     setFieldValue("province", "");
-    setFieldValue("amphoe", "");
+    setFieldValue("city", "");
     setFieldValue("district", "");
   }, 750);
+
+  const handleCity = (city: any) => {
+    getAddress({
+      params: { city },
+      callback: (response: any) => {
+        if (response.length > 0) {
+          setListDistrict(response);
+          setIsHaveCity(true);
+        }
+      },
+    });
+  };
 
   return (
     <S.AddressForm
@@ -154,19 +172,51 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
           />
         </S.RowWithTwoCells>
         <S.RowWithTwoCells>
-          <TextField
+          {/* <TextField
             name="amphoe"
             label={intl.formatMessage({ defaultMessage: "Amphoe" })}
             value={values!.amphoe}
             errors={fieldErrors!.amphoe}
             {...basicInputProps()}
             readOnly
+          /> */}
+
+          <InputSelect
+            label={intl.formatMessage({ defaultMessage: "Amphoe" })}
+            name="city"
+            options={listAddress}
+            value={values!.city}
+            // value={
+            //   values!.amphoe &&
+            //   listAddress!.find(
+            //     (option: any) => option.amphoe === values!.amphoe
+            //     // console.log("WOWW :", option.amphoe)
+            //   )
+            //   // values!.amphoe && listAddress!.find(option => values!.amphoe)
+            // }
+            onChange={(value: any, name: any) => {
+              // const filterDistrict = listAddress.filter(
+              //   (item: any) => item?.city === value.city
+              // );
+              // console.log("filterDistrict", filterDistrict);
+              handleCity(value.city);
+              // if (filterDistrict.length > 0) {
+              //   setListDistrict(filterDistrict);
+              //   setIsHaveCity(true);
+              // }
+              setFieldValue("district", "");
+              setFieldValue(name, value);
+            }}
+            optionLabelKey="city"
+            optionValueKey="city"
+            errors={fieldErrors!.city}
+            autoComplete="country"
           />
 
           <InputSelect
             label={intl.formatMessage({ defaultMessage: "District" })}
             name="district"
-            options={listAddress}
+            options={isHaveCity ? listDistrict : []}
             value={values!.district}
             // value={
             //   values!.district &&

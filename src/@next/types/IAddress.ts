@@ -5,7 +5,7 @@ export interface IAddress {
   companyName?: string;
   streetAddress1?: string;
   streetAddress2?: string;
-  city?: string;
+  city?: any;
   province?: string;
   amphoe?: string;
   district?: any;
