@@ -118,6 +118,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideEmailAddress),
         },
       ]);
+      return;
     }
 
     if (!address?.district) {
@@ -127,6 +128,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideDistrictAddress),
         },
       ]);
+      return;
     }
 
     if (!address?.phone) {
@@ -136,6 +138,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.providePhoneAddress),
         },
       ]);
+      return;
     }
 
     if (!address?.lastName) {
@@ -145,6 +148,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideLastNameAddress),
         },
       ]);
+      return;
     }
 
     if (!address?.firstName) {
@@ -154,13 +158,13 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideFirstNameAddress),
         },
       ]);
+      return;
     }
     const assignObjectAddress = {
       ...address,
-      district: address?.district.district,
-      city: address?.city.city,
+      district: address?.district?.district,
+      city: address?.city?.city,
     };
-    // console.log("ShippingAddress :", assignObjectAddress);
     changeSubmitProgress(true);
     const { dataError } = await setShippingAddress(
       {
@@ -226,6 +230,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideDistrictAddress),
         },
       ]);
+      return;
     }
 
     if (!address?.phone) {
@@ -235,6 +240,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.providePhoneAddress),
         },
       ]);
+      return;
     }
 
     if (!address?.lastName) {
@@ -244,6 +250,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideLastNameAddress),
         },
       ]);
+      return;
     }
 
     if (!address?.firstName) {
@@ -253,11 +260,13 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
           message: intl.formatMessage(commonMessages.provideFirstNameAddress),
         },
       ]);
+      return;
     }
 
     const assignObjectAddress = {
       ...address,
-      district: address?.district.district,
+      district: address?.district?.district,
+      city: address?.city?.city,
     };
     // console.log("BillingAddress :", assignObjectAddress);
     let errors;
@@ -276,6 +285,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       errors = dataError?.error;
     }
     changeSubmitProgress(false);
+    // console.log("err by bill :", errors);
     if (errors) {
       setBillingErrors(errors);
     } else {
