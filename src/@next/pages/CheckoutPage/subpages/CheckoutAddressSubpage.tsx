@@ -160,7 +160,7 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       district: address?.district.district,
       city: address?.city.city,
     };
-    console.log("ShippingAddress :", assignObjectAddress);
+    // console.log("ShippingAddress :", assignObjectAddress);
     changeSubmitProgress(true);
     const { dataError } = await setShippingAddress(
       {
