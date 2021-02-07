@@ -1,11 +1,14 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useIntl } from "react-intl";
+import { debounce, uniqBy } from "lodash";
 
 import { InputSelect, TextField } from "@components/molecules";
 import { commonMessages } from "@temp/intl";
 
 import * as S from "./styles";
 import { PropsWithFormik } from "./types";
+
+import { getAddress } from "../../../../sitemap/fetchCustom";
 
 export const AddressFormContent: React.FC<PropsWithFormik> = ({
   formRef,
@@ -15,8 +18,8 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
   errors,
   handleSubmit,
   values,
-  countriesOptions,
-  defaultValue,
+  // countriesOptions,
+  // defaultValue,
   setFieldValue,
   testingContext,
   includeEmail = false,
@@ -27,6 +30,9 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
   );
   const intl = useIntl();
   const fieldErrors: any = {};
+  const [listAddress, setListAddress] = useState([]);
+  const [listDistrict, setListDistrict] = useState([]);
+  const [isHaveCity, setIsHaveCity] = useState(false);
 
   if (errors) {
     errors.map(({ field, message }: { field: string; message: string }) => {
@@ -35,6 +41,42 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
         : [{ message }];
     });
   }
+  const handleZipCode = debounce(zipcode => {
+    if (zipcode.length === 5) {
+      getAddress({
+        params: { zipcode },
+        callback: (response: any) => {
+          // console.log("response :", response);
+          if (response.length > 0 && zipcode.length === 5) {
+            // setListAddress(response as any);
+            setListAddress(uniqBy(response, "city") as any);
+            setFieldValue("province", response[0].province);
+            setFieldValue("city", "");
+            setFieldValue("district", "");
+            setIsHaveCity(false);
+          }
+        },
+      });
+      return true;
+    }
+    setIsHaveCity(false);
+    setListAddress([]);
+    setFieldValue("province", "");
+    setFieldValue("city", "");
+    setFieldValue("district", "");
+  }, 750);
+
+  const handleCity = (city: any) => {
+    getAddress({
+      params: { city },
+      callback: (response: any) => {
+        if (response.length > 0) {
+          setListDistrict(response);
+          setIsHaveCity(true);
+        }
+      },
+    });
+  };
 
   return (
     <S.AddressForm
@@ -51,6 +93,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             value={values!.firstName}
             autoComplete="given-name"
             errors={fieldErrors!.firstName}
+            maxLength={20}
             {...basicInputProps()}
           />
           <TextField
@@ -58,6 +101,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             label={intl.formatMessage(commonMessages.lastName)}
             value={values!.lastName}
             autoComplete="family-name"
+            maxLength={20}
             errors={fieldErrors!.lastName}
             {...basicInputProps()}
           />
@@ -79,6 +123,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             value={values!.phone || undefined}
             autoComplete="tel"
             errors={fieldErrors!.phone}
+            maxLength={10}
             {...basicInputProps()}
           />
         </S.RowWithTwoCells>
@@ -104,48 +149,88 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
         </S.RowWithOneCell>
         <S.RowWithTwoCells>
           <TextField
-            name="city"
-            label={intl.formatMessage({ defaultMessage: "City" })}
-            value={values!.city}
-            autoComplete="address-level2"
-            errors={fieldErrors!.city}
-            {...basicInputProps()}
-          />
-          <TextField
             name="postalCode"
-            label={intl.formatMessage({ defaultMessage: "ZIP/Postal Code" })}
+            label={intl.formatMessage({ defaultMessage: "Zipcode" })}
             value={values!.postalCode}
+            onBlur={handleBlur}
+            onChange={e => {
+              handleChange(e);
+              handleZipCode(e.target.value);
+            }}
             autoComplete="postal-code"
             errors={fieldErrors!.postalCode}
+            maxLength={5}
+            // {...basicInputProps()}
+          />
+          <TextField
+            name="province"
+            label={intl.formatMessage({ defaultMessage: "Province" })}
+            value={values!.province}
+            errors={fieldErrors!.province}
             {...basicInputProps()}
+            readOnly
           />
         </S.RowWithTwoCells>
         <S.RowWithTwoCells>
+          {/* <TextField
+            name="amphoe"
+            label={intl.formatMessage({ defaultMessage: "Amphoe" })}
+            value={values!.amphoe}
+            errors={fieldErrors!.amphoe}
+            {...basicInputProps()}
+            readOnly
+          /> */}
+
           <InputSelect
-            defaultValue={defaultValue}
-            label={intl.formatMessage({ defaultMessage: "Country" })}
-            name="country"
-            options={countriesOptions}
-            value={
-              values!.country &&
-              countriesOptions &&
-              countriesOptions!.find(
-                option => option.code === values!.country!.code
-              )
-            }
-            onChange={(value: any, name: any) => setFieldValue(name, value)}
-            optionLabelKey="country"
-            optionValueKey="code"
-            errors={fieldErrors!.country}
+            label={intl.formatMessage({ defaultMessage: "Amphoe" })}
+            name="city"
+            options={listAddress}
+            value={values!.city}
+            // value={
+            //   values!.amphoe &&
+            //   listAddress!.find(
+            //     (option: any) => option.amphoe === values!.amphoe
+            //     // console.log("WOWW :", option.amphoe)
+            //   )
+            //   // values!.amphoe && listAddress!.find(option => values!.amphoe)
+            // }
+            onChange={(value: any, name: any) => {
+              // const filterDistrict = listAddress.filter(
+              //   (item: any) => item?.city === value.city
+              // );
+              // console.log("filterDistrict", filterDistrict);
+              handleCity(value.city);
+              // if (filterDistrict.length > 0) {
+              //   setListDistrict(filterDistrict);
+              //   setIsHaveCity(true);
+              // }
+              setFieldValue("district", "");
+              setFieldValue(name, value);
+            }}
+            optionLabelKey="city"
+            optionValueKey="city"
+            errors={fieldErrors!.city}
             autoComplete="country"
           />
-          <TextField
-            name="countryArea"
-            label={intl.formatMessage({ defaultMessage: "State/province" })}
-            value={values!.countryArea}
-            autoComplete="address-level1"
-            errors={fieldErrors!.countryArea}
-            {...basicInputProps()}
+
+          <InputSelect
+            label={intl.formatMessage({ defaultMessage: "District" })}
+            name="district"
+            options={isHaveCity ? listDistrict : []}
+            value={values!.district}
+            // value={
+            //   values!.district &&
+            //   listAddress!.find(
+            //     (option: any) => option.district === values!.district
+            //     // console.log("WOWW :", option.district)
+            //   )
+            //   // values!.district && listAddress!.find(option => values!.district)
+            // }
+            onChange={(value: any, name: any) => setFieldValue(name, value)}
+            optionLabelKey="district"
+            optionValueKey="district"
+            errors={fieldErrors!.district}
+            autoComplete="country"
           />
         </S.RowWithTwoCells>
         {includeEmail && (
@@ -157,6 +242,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
               autoComplete="email"
               errors={fieldErrors!.email}
               {...basicInputProps()}
+              maxLength={40}
             />
           </S.RowWithTwoCells>
         )}

@@ -25,8 +25,20 @@ export const commonMessages = defineMessages({
   choosePaymentMethod: {
     defaultMessage: "Please choose payment method.",
   },
+  provideFirstNameAddress: {
+    defaultMessage: "Please provide Firstname address.",
+  },
+  provideLastNameAddress: {
+    defaultMessage: "Please provide Lastname address.",
+  },
+  providePhoneAddress: {
+    defaultMessage: "Please provide Phone number.",
+  },
   provideEmailAddress: {
     defaultMessage: "Please provide email address.",
+  },
+  provideDistrictAddress: {
+    defaultMessage: "Please provide district address.",
   },
   account: {
     defaultMessage: "Account",
