@@ -84,7 +84,7 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
                 className="side-nav__menu-item-logo"
                 onClick={hideOverlay}
               >
-                <BuilderComponent model="section" />
+                <BuilderComponent model="logo" />
 
                 {/* <ReactSVG path={logoImg} /> */}
               </Link>
