@@ -120,6 +120,8 @@ module.exports = ({ sourceDir, distDir }) => ({
       API_URI: "http://localhost:8000/graphql/",
       BUILDER_IO_API_KEY: "API_KEY",
       SALEOR_CHANNEL_SLUG: "default-channel",
+      COUNTRY_CODE: "TH",
+      COUNTRY_NAME: "Thailand",
       DEMO_MODE: false,
       GTM_ID: undefined,
       SENTRY_APM: "0",

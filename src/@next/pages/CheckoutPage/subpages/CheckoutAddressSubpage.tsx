@@ -13,6 +13,7 @@ import { RouteComponentProps } from "react-router";
 import { CheckoutAddress } from "@components/organisms";
 import { useAuth, useCheckout, useCart } from "@saleor/sdk";
 // import { ShopContext } from "@temp/components/ShopProvider/context";
+import { countryCode, countryName } from "@temp/constants";
 import { commonMessages } from "@temp/intl";
 import { IAddress, IFormError } from "@types";
 import { filterNotEmptyArrayItems } from "@utils/misc";
@@ -121,6 +122,16 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       return;
     }
 
+    if (!address?.city) {
+      setShippingErrors([
+        {
+          field: "city",
+          message: intl.formatMessage(commonMessages.provideAmphoeAddress),
+        },
+      ]);
+      return;
+    }
+
     if (!address?.district) {
       setShippingErrors([
         {
@@ -162,9 +173,15 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
     }
     const assignObjectAddress = {
       ...address,
-      district: address?.district?.district,
-      city: address?.city?.city,
+      city_area: address?.district?.district,
+      country: {
+        code: countryCode,
+        country: countryName,
+      },
+      countryArea: address?.province,
+      city: address?.city?.city || address?.city,
     };
+    // delete assignObjectAddress.district;
     changeSubmitProgress(true);
     const { dataError } = await setShippingAddress(
       {
@@ -223,51 +240,17 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       return;
     }
 
-    if (!address?.district) {
-      setShippingErrors([
-        {
-          field: "district",
-          message: intl.formatMessage(commonMessages.provideDistrictAddress),
-        },
-      ]);
-      return;
-    }
-
-    if (!address?.phone) {
-      setShippingErrors([
-        {
-          field: "phone",
-          message: intl.formatMessage(commonMessages.providePhoneAddress),
-        },
-      ]);
-      return;
-    }
-
-    if (!address?.lastName) {
-      setShippingErrors([
-        {
-          field: "lastName",
-          message: intl.formatMessage(commonMessages.provideLastNameAddress),
-        },
-      ]);
-      return;
-    }
-
-    if (!address?.firstName) {
-      setShippingErrors([
-        {
-          field: "firstName",
-          message: intl.formatMessage(commonMessages.provideFirstNameAddress),
-        },
-      ]);
-      return;
-    }
-
     const assignObjectAddress = {
       ...address,
-      district: address?.district?.district,
-      city: address?.city?.city,
+      city_area: address?.district?.district,
+      country: {
+        code: countryCode,
+        country: countryName,
+      },
+      countryArea: address?.province,
+      city: address?.city?.city || address?.city,
     };
+    // delete assignObjectAddress.district;
     // console.log("BillingAddress :", assignObjectAddress);
     let errors;
     changeSubmitProgress(true);

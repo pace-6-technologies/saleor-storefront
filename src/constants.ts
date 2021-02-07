@@ -8,3 +8,6 @@ export const demoMode = process.env.DEMO_MODE === "true";
 export const channelSlug = process.env.SALEOR_CHANNEL_SLUG;
 
 export const builderIoApiKey = process.env.BUILDER_IO_API_KEY;
+
+export const countryCode = process.env.COUNTRY_CODE;
+export const countryName = process.env.COUNTRY_NAME;
