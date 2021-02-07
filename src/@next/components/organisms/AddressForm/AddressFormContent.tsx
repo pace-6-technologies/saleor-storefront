@@ -35,25 +35,32 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
   const [isHaveCity, setIsHaveCity] = useState(false);
 
   if (errors) {
-    errors.map(({ field, message }: { field: string; message: string }) => {
-      fieldErrors[field] = fieldErrors[field]
-        ? [...fieldErrors[field], { message }]
-        : [{ message }];
-    });
+    if (errors.length > 0) {
+      errors.map(({ field, message }: { field: string; message: string }) => {
+        fieldErrors[field] = fieldErrors[field]
+          ? [...fieldErrors[field], { message }]
+          : [{ message }];
+      });
+    }
   }
+
   const handleZipCode = debounce(zipcode => {
     if (zipcode.length === 5) {
       getAddress({
         params: { zipcode },
         callback: (response: any) => {
-          // console.log("response :", response);
           if (response.length > 0 && zipcode.length === 5) {
-            // setListAddress(response as any);
-            setListAddress(uniqBy(response, "city") as any);
-            setFieldValue("province", response[0].province);
-            setFieldValue("city", "");
+            const GroupByCity: any = uniqBy(response, "city");
+            setListAddress(GroupByCity);
+            setFieldValue("province", GroupByCity[0]?.province);
+            if (GroupByCity.length === 1) {
+              setFieldValue("city", GroupByCity[0]?.city);
+              handleCity(GroupByCity[0]?.city);
+              setIsHaveCity(true);
+            } else {
+              setFieldValue("city", "");
+            }
             setFieldValue("district", "");
-            setIsHaveCity(false);
           }
         },
       });
@@ -71,7 +78,8 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
       params: { city },
       callback: (response: any) => {
         if (response.length > 0) {
-          setListDistrict(response);
+          const GroupByDistrict: any = uniqBy(response, "district");
+          setListDistrict(GroupByDistrict);
           setIsHaveCity(true);
         }
       },
@@ -171,61 +179,40 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             readOnly
           />
         </S.RowWithTwoCells>
-        <S.RowWithTwoCells>
-          {/* <TextField
-            name="amphoe"
-            label={intl.formatMessage({ defaultMessage: "Amphoe" })}
-            value={values!.amphoe}
-            errors={fieldErrors!.amphoe}
-            {...basicInputProps()}
-            readOnly
-          /> */}
 
-          <InputSelect
-            label={intl.formatMessage({ defaultMessage: "Amphoe" })}
-            name="city"
-            options={listAddress}
-            value={values!.city}
-            // value={
-            //   values!.amphoe &&
-            //   listAddress!.find(
-            //     (option: any) => option.amphoe === values!.amphoe
-            //     // console.log("WOWW :", option.amphoe)
-            //   )
-            //   // values!.amphoe && listAddress!.find(option => values!.amphoe)
-            // }
-            onChange={(value: any, name: any) => {
-              // const filterDistrict = listAddress.filter(
-              //   (item: any) => item?.city === value.city
-              // );
-              // console.log("filterDistrict", filterDistrict);
-              handleCity(value.city);
-              // if (filterDistrict.length > 0) {
-              //   setListDistrict(filterDistrict);
-              //   setIsHaveCity(true);
-              // }
-              setFieldValue("district", "");
-              setFieldValue(name, value);
-            }}
-            optionLabelKey="city"
-            optionValueKey="city"
-            errors={fieldErrors!.city}
-            autoComplete="country"
-          />
+        <S.RowWithTwoCells>
+          {listAddress.length === 1 ? (
+            <TextField
+              name="city"
+              label={intl.formatMessage({ defaultMessage: "Amphoe" })}
+              value={values!.city}
+              errors={fieldErrors!.city}
+              readOnly
+              {...basicInputProps()}
+            />
+          ) : (
+            <InputSelect
+              label={intl.formatMessage({ defaultMessage: "Amphoe" })}
+              name="city"
+              options={listAddress}
+              value={values!.city}
+              onChange={(value: any, name: any) => {
+                handleCity(value.city);
+                setFieldValue("district", "");
+                setFieldValue(name, value);
+              }}
+              optionLabelKey="city"
+              optionValueKey="city"
+              errors={fieldErrors!.city}
+              autoComplete="country"
+            />
+          )}
 
           <InputSelect
             label={intl.formatMessage({ defaultMessage: "District" })}
             name="district"
             options={isHaveCity ? listDistrict : []}
             value={values!.district}
-            // value={
-            //   values!.district &&
-            //   listAddress!.find(
-            //     (option: any) => option.district === values!.district
-            //     // console.log("WOWW :", option.district)
-            //   )
-            //   // values!.district && listAddress!.find(option => values!.district)
-            // }
             onChange={(value: any, name: any) => setFieldValue(name, value)}
             optionLabelKey="district"
             optionValueKey="district"
