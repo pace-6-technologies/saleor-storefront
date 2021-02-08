@@ -1,21 +1,19 @@
 import { Formik } from "formik";
 import { pick } from "lodash";
 import React from "react";
-
+import { countryCode, countryName } from "@temp/constants";
 import { IAddress } from "@types";
 import { AddressFormContent } from "./AddressFormContent";
 import { IProps } from "./types";
 
 const ADDRESS_FIELDS = [
-  "province",
-  // "amphoe",
-  "district",
+  "cityArea",
   "city",
   "companyName",
-  // "countryArea",
+  "countryArea",
   "firstName",
   "lastName",
-  // "country",
+  "country",
   "phone",
   "postalCode",
   "streetAddress1",
@@ -35,9 +33,14 @@ export const AddressForm: React.FC<IProps> = ({
   if (address) {
     addressWithPickedFields = pick(address, ADDRESS_FIELDS);
   }
-  // if (defaultValue) {
-  //   addressWithPickedFields.country = defaultValue;
-  // }
+  if (defaultValue) {
+    addressWithPickedFields.country = defaultValue;
+  } else {
+    addressWithPickedFields.country = {
+      code: countryCode,
+      country: countryName,
+    };
+  }
   return (
     <Formik
       initialValues={addressWithPickedFields}

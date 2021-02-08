@@ -37,11 +37,11 @@ export const commonMessages = defineMessages({
   provideEmailAddress: {
     defaultMessage: "Please provide email address.",
   },
-  provideDistrictAddress: {
-    defaultMessage: "Please provide district address.",
+  provideCityAreaAddress: {
+    defaultMessage: "Please provide city area address.",
   },
-  provideAmphoeAddress: {
-    defaultMessage: "Please provide amphoe address.",
+  provideCityAddress: {
+    defaultMessage: "Please provide city address.",
   },
   account: {
     defaultMessage: "Account",

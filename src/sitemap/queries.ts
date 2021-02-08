@@ -52,14 +52,14 @@ export const getCollectionsQuery = gql`
 `;
 
 export const getAddressQuery = gql`
-  query getAddressQuery($zipcode: String, $city: String) {
-    regions(first: 50, zipcode: $zipcode, city: $city) {
+  query getAddressQuery($postalCode: String, $city: String) {
+    regions(first: 50, postalCode: $postalCode, city: $city) {
       edges {
         node {
-          zipcode
-          province
+          postalCode
+          countryArea
           city
-          district
+          cityArea
           id
         }
       }

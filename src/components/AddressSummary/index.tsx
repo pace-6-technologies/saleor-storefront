@@ -28,7 +28,7 @@ const AddressSummary: React.FC<{
             {address.streetAddress2} <br />
           </>
         )}
-        {address.city}, {address.postalCode}
+        {address.city}, {address.cityArea}, {address.postalCode}
         <br />
         {address.countryArea && (
           <>

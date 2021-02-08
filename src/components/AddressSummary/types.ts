@@ -8,5 +8,6 @@ export interface FormAddressType extends Omit<AddressType, "country"> {
   asBilling?: boolean;
   asNew?: boolean;
   email?: string;
+  cityArea?: string;
   country: { country?: string; code?: string; value?: string };
 }
