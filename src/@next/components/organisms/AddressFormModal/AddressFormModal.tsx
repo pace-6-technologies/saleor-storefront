@@ -74,6 +74,8 @@ export const AddressFormModal: React.FC<IProps> = ({
               input: {
                 ...data,
                 country: data?.country?.code as CountryCode,
+                city: data?.city.city || data?.city,
+                cityArea: data?.cityArea.cityArea || data?.cityArea,
               },
             });
           } else {
@@ -82,6 +84,8 @@ export const AddressFormModal: React.FC<IProps> = ({
               input: {
                 ...data,
                 country: data?.country?.code as CountryCode,
+                city: data?.city.city || data?.city,
+                cityArea: data?.cityArea.cityArea || data?.cityArea,
               },
             });
           }
