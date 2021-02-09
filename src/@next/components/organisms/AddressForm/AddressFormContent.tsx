@@ -131,7 +131,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             value={values!.phone || undefined}
             autoComplete="tel"
             errors={fieldErrors!.phone}
-            maxLength={10}
+            maxLength={12}
             {...basicInputProps()}
           />
         </S.RowWithTwoCells>

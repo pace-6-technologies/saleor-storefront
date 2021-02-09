@@ -172,13 +172,12 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
     }
     const assignObjectAddress = {
       ...address,
-      cityArea: address?.cityArea,
+      cityArea: address?.cityArea.cityArea || address?.cityArea,
       country: {
         code: countryCode,
         country: countryName,
       },
-      countryArea: address?.countryArea,
-      city: address?.city || address?.city,
+      city: address?.city.city || address?.city,
     };
 
     changeSubmitProgress(true);
@@ -241,13 +240,12 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
 
     const assignObjectAddress = {
       ...address,
-      cityArea: address?.cityArea,
+      cityArea: address?.cityArea.cityArea || address?.cityArea,
       country: {
         code: countryCode,
         country: countryName,
       },
-      countryArea: address?.countryArea,
-      city: address?.city || address?.city,
+      city: address?.city.city || address?.city,
     };
 
     let errors;
@@ -266,7 +264,6 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       errors = dataError?.error;
     }
     changeSubmitProgress(false);
-    // console.log("err by bill :", errors);
     if (errors) {
       setBillingErrors(errors);
     } else {
