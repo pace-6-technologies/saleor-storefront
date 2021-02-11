@@ -150,7 +150,7 @@ const CartSidebar: React.FC<ICartSidebar> = ({
                 onClick={continueShopping}
               >
                 <FormattedMessage
-                  defaultMessage="Continue shopping"
+                  defaultMessage="CONTINUE SHOPPING"
                   description="button"
                 />
               </Button>
@@ -173,7 +173,7 @@ const CartSidebar: React.FC<ICartSidebar> = ({
               onClick={goToCart}
             >
               <FormattedMessage
-                defaultMessage="Go to my cart"
+                defaultMessage="Gotomycart"
                 description="button"
               />
             </Button>
