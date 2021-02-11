@@ -14,8 +14,8 @@ const View: React.FC<RouteComponentProps<{ token?: string }>> = ({
   },
 }) => {
   const { data: order, loading } = useOrderDetails(
-    { token },
-    { fetchPolicy: "cache-and-network" }
+    { token }
+    // { fetchPolicy: "cache-and-network" }
   );
   const { user } = useAuth();
   const guest = !user;

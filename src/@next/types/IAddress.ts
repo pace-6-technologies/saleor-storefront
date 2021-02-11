@@ -5,10 +5,8 @@ export interface IAddress {
   companyName?: string;
   streetAddress1?: string;
   streetAddress2?: string;
-  city?: any;
-  province?: string;
-  amphoe?: string;
-  district?: any;
+  city?: string | any;
+  cityArea?: string | any;
   postalCode?: string;
   countryArea?: string;
   phone?: any | null;

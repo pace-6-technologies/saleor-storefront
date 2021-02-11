@@ -109,7 +109,6 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       ]);
       return;
     }
-
     const shippingEmail = user?.email || email || "";
 
     if (!shippingEmail) {
@@ -126,17 +125,17 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       setShippingErrors([
         {
           field: "city",
-          message: intl.formatMessage(commonMessages.provideAmphoeAddress),
+          message: intl.formatMessage(commonMessages.provideCityAddress),
         },
       ]);
       return;
     }
 
-    if (!address?.district) {
+    if (!address?.cityArea) {
       setShippingErrors([
         {
-          field: "district",
-          message: intl.formatMessage(commonMessages.provideDistrictAddress),
+          field: "cityArea",
+          message: intl.formatMessage(commonMessages.provideCityAreaAddress),
         },
       ]);
       return;
@@ -173,15 +172,14 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
     }
     const assignObjectAddress = {
       ...address,
-      city_area: address?.district?.district,
+      cityArea: address?.cityArea.cityArea || address?.cityArea,
       country: {
         code: countryCode,
         country: countryName,
       },
-      countryArea: address?.province,
-      city: address?.city?.city || address?.city,
+      city: address?.city.city || address?.city,
     };
-    // delete assignObjectAddress.district;
+
     changeSubmitProgress(true);
     const { dataError } = await setShippingAddress(
       {
@@ -242,16 +240,14 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
 
     const assignObjectAddress = {
       ...address,
-      city_area: address?.district?.district,
+      cityArea: address?.cityArea.cityArea || address?.cityArea,
       country: {
         code: countryCode,
         country: countryName,
       },
-      countryArea: address?.province,
-      city: address?.city?.city || address?.city,
+      city: address?.city.city || address?.city,
     };
-    // delete assignObjectAddress.district;
-    // console.log("BillingAddress :", assignObjectAddress);
+
     let errors;
     changeSubmitProgress(true);
     if (billingAsShippingState && isShippingRequiredForProducts) {
@@ -268,7 +264,6 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       errors = dataError?.error;
     }
     changeSubmitProgress(false);
-    // console.log("err by bill :", errors);
     if (errors) {
       setBillingErrors(errors);
     } else {

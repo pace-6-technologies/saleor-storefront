@@ -11,6 +11,7 @@ export const Address: React.FC<IAddress> = ({
   streetAddress1,
   streetAddress2,
   city,
+  cityArea,
   postalCode,
   countryArea,
   country,
@@ -30,7 +31,7 @@ export const Address: React.FC<IAddress> = ({
         {streetAddress2} <br />
       </>
     )}
-    {postalCode && `${postalCode},`} {city}
+    {postalCode && `${postalCode},`} {city}, {cityArea},
     <br />
     {countryArea && <>{countryArea}, </>}
     {country!.country}

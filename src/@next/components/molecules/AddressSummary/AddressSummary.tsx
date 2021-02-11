@@ -21,7 +21,7 @@ const AddressSummary: React.FC<IProps> = ({ address, email }: IProps) => {
         )}
         {address.streetAddress1}
         {address.streetAddress2 && <>, {address.streetAddress2}</>},{" "}
-        {address.city}, {address.postalCode}
+        {address.city}, {address.cityArea}, {address.postalCode}
         {address.countryArea && <>, {address.countryArea}</>},{" "}
         {address.country?.country}
         <br />

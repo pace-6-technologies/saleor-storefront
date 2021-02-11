@@ -31,7 +31,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
   const intl = useIntl();
   const fieldErrors: any = {};
   const [listAddress, setListAddress] = useState([]);
-  const [listDistrict, setListDistrict] = useState([]);
+  const [listCityArea, setListCityArea] = useState([]);
   const [isHaveCity, setIsHaveCity] = useState(false);
 
   if (errors) {
@@ -44,15 +44,15 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
     }
   }
 
-  const handleZipCode = debounce(zipcode => {
-    if (zipcode.length === 5) {
+  const handleZipCode = debounce(postalCode => {
+    if (postalCode.length === 5) {
       getAddress({
-        params: { zipcode },
+        params: { postalCode },
         callback: (response: any) => {
-          if (response.length > 0 && zipcode.length === 5) {
+          if (response.length > 0 && postalCode.length === 5) {
             const GroupByCity: any = uniqBy(response, "city");
             setListAddress(GroupByCity);
-            setFieldValue("province", GroupByCity[0]?.province);
+            setFieldValue("countryArea", GroupByCity[0]?.countryArea);
             if (GroupByCity.length === 1) {
               setFieldValue("city", GroupByCity[0]?.city);
               handleCity(GroupByCity[0]?.city);
@@ -60,7 +60,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             } else {
               setFieldValue("city", "");
             }
-            setFieldValue("district", "");
+            setFieldValue("cityArea", "");
           }
         },
       });
@@ -68,9 +68,9 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
     }
     setIsHaveCity(false);
     setListAddress([]);
-    setFieldValue("province", "");
+    setFieldValue("countryArea", "");
     setFieldValue("city", "");
-    setFieldValue("district", "");
+    setFieldValue("cityArea", "");
   }, 750);
 
   const handleCity = (city: any) => {
@@ -78,8 +78,8 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
       params: { city },
       callback: (response: any) => {
         if (response.length > 0) {
-          const GroupByDistrict: any = uniqBy(response, "district");
-          setListDistrict(GroupByDistrict);
+          const GroupByCityArea: any = uniqBy(response, "cityArea");
+          setListCityArea(GroupByCityArea);
           setIsHaveCity(true);
         }
       },
@@ -131,7 +131,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             value={values!.phone || undefined}
             autoComplete="tel"
             errors={fieldErrors!.phone}
-            maxLength={10}
+            maxLength={12}
             {...basicInputProps()}
           />
         </S.RowWithTwoCells>
@@ -171,9 +171,9 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             // {...basicInputProps()}
           />
           <TextField
-            name="province"
-            label={intl.formatMessage({ defaultMessage: "Province" })}
-            value={values!.province}
+            name="countryArea"
+            label={intl.formatMessage({ defaultMessage: "countryArea" })}
+            value={values!.countryArea}
             errors={fieldErrors!.province}
             {...basicInputProps()}
             readOnly
@@ -184,7 +184,7 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
           {listAddress.length === 1 ? (
             <TextField
               name="city"
-              label={intl.formatMessage({ defaultMessage: "Amphoe" })}
+              label={intl.formatMessage({ defaultMessage: "City" })}
               value={values!.city}
               errors={fieldErrors!.city}
               readOnly
@@ -192,13 +192,13 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
             />
           ) : (
             <InputSelect
-              label={intl.formatMessage({ defaultMessage: "Amphoe" })}
+              label={intl.formatMessage({ defaultMessage: "City" })}
               name="city"
               options={listAddress}
               value={values!.city}
               onChange={(value: any, name: any) => {
                 handleCity(value.city);
-                setFieldValue("district", "");
+                setFieldValue("cityArea", "");
                 setFieldValue(name, value);
               }}
               optionLabelKey="city"
@@ -209,14 +209,14 @@ export const AddressFormContent: React.FC<PropsWithFormik> = ({
           )}
 
           <InputSelect
-            label={intl.formatMessage({ defaultMessage: "District" })}
-            name="district"
-            options={isHaveCity ? listDistrict : []}
-            value={values!.district}
+            label={intl.formatMessage({ defaultMessage: "cityArea" })}
+            name="cityArea"
+            options={isHaveCity ? listCityArea : []}
+            value={values!.cityArea}
             onChange={(value: any, name: any) => setFieldValue(name, value)}
-            optionLabelKey="district"
-            optionValueKey="district"
-            errors={fieldErrors!.district}
+            optionLabelKey="cityArea"
+            optionValueKey="cityArea"
+            errors={fieldErrors!.cityArea}
             autoComplete="country"
           />
         </S.RowWithTwoCells>
