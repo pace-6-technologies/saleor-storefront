@@ -401,6 +401,9 @@
   "intl_dot_commonMessages_dot_goToMyCart": {
     "string": "ไปที่ตะกร้าของฉัน"
   },
+  "intl_dot_commonMessages_dot_language": {
+    "string": "ภาษา"
+  },
   "intl_dot_checkoutMessages_dot_addressNextActionName": {
     "string": "ทำต่อตัวเลือกการจัดส่ง"
   },

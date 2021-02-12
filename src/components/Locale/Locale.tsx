@@ -146,6 +146,7 @@ const localeData: Record<Locale, LocaleMessages> = {
 };
 
 export const localeNames: Record<Locale, string> = {
+  [Locale.TH]: "ภาษาไทย",
   // [Locale.AR]: "العربيّة",
   // [Locale.AZ]: "Azərbaycanca",
   // [Locale.BG]: "български",
@@ -184,7 +185,6 @@ export const localeNames: Record<Locale, string> = {
   // [Locale.SQ]: "shqip",
   // [Locale.SR]: "српски",
   // [Locale.SV]: "svenska",
-  [Locale.TH]: "ภาษาไทย",
   // [Locale.TR]: "Türkçe",
   // [Locale.UK]: "Українська",
   // [Locale.VI]: "Tiếng Việt",
@@ -207,20 +207,41 @@ function getKeyValueJson(messages: LocaleMessages): Record<string, string> {
 
 const defaultLocale = Locale.EN;
 
+const ContextLocalization = React.createContext(undefined);
+
 const LocaleProvider: React.FC = ({ children }) => {
   // For now locale can be set here
-  const locale = Locale.TH;
+  // const locale = Locale.TH;
+  const [language, setLanguage] = React.useState(Locale.TH);
+
+  const handleSetLang = (lang = Locale.TH) => {
+    setLanguage(lang);
+    localStorage.setItem("myLanguage", lang);
+  };
+
+  const initialLanguage = () => {
+    const localStorageLang: any = localStorage.getItem("myLanguage");
+    if (localStorageLang) {
+      handleSetLang(localStorageLang);
+    }
+  };
+
+  React.useEffect(() => {
+    initialLanguage();
+  }, []);
 
   return (
-    <IntlProvider
-      defaultLocale={defaultLocale}
-      locale={locale}
-      messages={getKeyValueJson(localeData[locale])}
-      key={locale}
-    >
-      {children}
-    </IntlProvider>
+    <ContextLocalization.Provider value={[handleSetLang]}>
+      <IntlProvider
+        defaultLocale={defaultLocale}
+        locale={language}
+        messages={getKeyValueJson(localeData[language])}
+        key={language}
+      >
+        {children}
+      </IntlProvider>
+    </ContextLocalization.Provider>
   );
 };
 
-export { LocaleProvider };
+export { LocaleProvider, ContextLocalization };

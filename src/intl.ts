@@ -145,6 +145,9 @@ export const commonMessages = defineMessages({
   home: {
     defaultMessage: "Home",
   },
+  language: {
+    defaultMessage: "Language",
+  },
 });
 
 export const checkoutMessages = defineMessages({
