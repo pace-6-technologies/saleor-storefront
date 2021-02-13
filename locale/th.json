@@ -3,13 +3,13 @@
     "string": "เพิ่มที่อยู่"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_214739616": {
-    "string": "Play with <emphasis>GraphQL API</emphasis>"
+    "string": "ลองใช้งาน <emphasis>GraphQL API</emphasis>"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_2367386033": {
-    "string": "API"
+    "string": "เอพีไอ"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_2844777114": {
-    "string": "Explore <emphasis>Store’s dashboard</emphasis>"
+    "string": "ดู <emphasis>แดชบอร์ด</emphasis>"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_3662390044": {
     "string": "แดชบอร์ด"
@@ -33,7 +33,7 @@
     "string": "รหัสผ่านเก่า"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordChangeForm_dot_2369435044": {
-    "string": "จำเป็นต้องใส่ฟิลด์นี้"
+    "string": "ข้อมูลจำเป็น"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordChangeForm_dot_2799926859": {
     "string": "ยืนยันรหัสผ่าน"
@@ -48,25 +48,25 @@
     "string": "เพิ่มลงตะกร้าสินค้า"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_1224809208": {
-    "string": "Default Address"
+    "string": "ที่อยู่ตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_1578192486": {
-    "string": "Default ที่อยู่ในการจัดส่งบิล"
+    "string": "ที่อยู่ในการจัดส่งบิล"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_2131178753": {
-    "string": "Set as default shipping address"
+    "string": "ตั้งเป็นที่อยู่จัดส่งตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_3096438859": {
-    "string": "Set as default ที่อยู่ในการจัดส่งบิล"
+    "string": "ตั้งเป็นที่อยู่ในการจัดออกบิลตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_4109348993": {
-    "string": "Default Shipping Address"
+    "string": "ที่อยู่จัดส่งตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AttributeValuesChecklist_dot_AttributeValuesChecklist_dot_2029012727": {
-    "string": "VIEW ALL OPTIONS"
+    "string": "ดูตัวเลือกทั้งหมด"
   },
   "@next_dot_components_dot_molecules_dot_OrderTabel_dot_OrderTabel_dot_1148029984": {
-    "string": "Value"
+    "string": "ค่า"
   },
   "@next_dot_components_dot_molecules_dot_OrderTabel_dot_OrderTabel_dot_1633831221": {
     "string": "วันที่สั่งสินค้า"
@@ -84,7 +84,7 @@
     "string": "คุณลักษณะ"
   },
   "@next_dot_components_dot_molecules_dot_ProductListHeader_dot_ProductListHeader_dot_3317426832": {
-    "string": "พบสินค้า"
+    "string": "สินค้าที่พบ"
   },
   "@next_dot_components_dot_molecules_dot_ResetPasswordForm_dot_ResetPasswordForm_dot_1865992141": {
     "string": "กรุณากรอกรหัสผ่านใหม่"
@@ -168,11 +168,11 @@
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenErrorMessages_dot_unknownPayment": {
     "context": "Adyen payment gateway error",
-    "string": "เกิดข้อผิดพลาดในการส่งการชำระเงินที่ไม่รู้จัก"
+    "string": "เกิดข้อผิดพลาดในการส่งการชำระเงิน"
   },
   "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_4121934554": {
     "context": "cart sidebar description",
-    "string": "คุณยังไม่ได้เพิ่มอะไรลงในกระเป๋า เรามั่นใจว่าคุณจะพบบางอย่างในร้านของเรา"
+    "string": "คุณยังไม่ได้เพิ่มอะไรลงในตะกร้าสินค้า เรามั่นใจว่าคุณจะพบบางอย่างที่คุณสนใจในร้านของเรา"
   },
   "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3173718889": {
     "string": "ตะกร้าของฉัน"
@@ -183,7 +183,7 @@
   },
   "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_332948942": {
     "context": "button",
-    "string": "ทำการสั่งสินค้า"
+    "string": "ซื้อ"
   },
   "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3452230111": {
     "context": "button",
@@ -200,7 +200,7 @@
     "string": "เหมือนที่อยู่จัดส่ง"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutPayment_dot_CheckoutPayment_dot_3382401165": {
-    "string": "คุณมีวอชเชอร์หรือโค้ดส่วนลดหรือไม่ ?"
+    "string": "คุณมีโค้ดส่วนลดหรือเปล่า ?"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutReview_dot_CheckoutReview_dot_348821000": {
     "string": "วีธีชำระเงิน"
@@ -209,13 +209,13 @@
     "string": "วิธีการจัดส่ง"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutReview_dot_CheckoutReview_dot_4282475982": {
-    "string": "ที่อยู่ในการจัดส่งบิล"
+    "string": "ที่อยู่ในการออกบิล"
   },
   "@next_dot_components_dot_organisms_dot_DiscountForm_dot_DiscountForm_dot_3476123": {
     "string": "ใช้"
   },
   "@next_dot_components_dot_organisms_dot_ProductList_dot_ProductList_dot_2783099424": {
-    "string": "More +"
+    "string": "เพิ่มเติม +"
   },
   "@next_dot_components_dot_organisms_dot_ProductVariantPicker_dot_ProductVariantAttributeSelect_dot_1125254976": {
     "string": "กรุณาเลือก {selectLabel}"
@@ -251,7 +251,7 @@
     "string": "ตะกร้าของฉัน"
   },
   "@next_dot_pages_dot_CheckoutPage_dot_subpages_dot_CheckoutAddressSubpage_dot_2558335134": {
-    "string": "กรุณากรอกที่อยู่บิล"
+    "string": "กรุณากรอกที่อยู่ออกบิล"
   },
   "@next_dot_pages_dot_CheckoutPage_dot_subpages_dot_CheckoutAddressSubpage_dot_929802659": {
     "string": "กรุณากรอกที่อยู่ในการจัดส่ง"
@@ -263,16 +263,16 @@
     "string": "แก้ไขที่อยู่"
   },
   "app_dot_Notifications_dot_1053546789": {
-    "string": "หากต้องการอัปเดตแอปพลิเคชันเป็นเวอร์ชันล่าสุดโปรดรีเฟรชหน้าเพจ"
+    "string": "เราได้ทำการปรับปรุงเว็บของเรา กดรีเฟรชเพื่อรับการความสามารถใหม่ๆ"
   },
   "app_dot_Notifications_dot_1308518649": {
     "string": "รีเฟรช"
   },
   "app_dot_Notifications_dot_1917823234": {
-    "string": "ล็อกอินสำเร็จ"
+    "string": "เข้าสู่ระบบสำเร็จ"
   },
   "app_dot_Notifications_dot_2378877294": {
-    "string": "ล็อกเอาท์สำเร็จ"
+    "string": "ออกจากระบบสำเร็จ"
   },
   "app_dot_Notifications_dot_795565": {
     "string": "มีเวอร์ชั่นใหม่แล้ว !"
@@ -299,7 +299,7 @@
     "string": "หรือคุณสามารถ"
   },
   "components_dot_CheckoutLogin_dot_CheckoutAsGuest_dot_647198093": {
-    "string": "หากคุณไม่ต้องการลงทะเบียนบัญชีไม่ต้องกังวล คุณสามารถชำระเงินในฐานะแขกได้ เราใส่ใจคุณมากพอ ๆ กับผู้ใช้ที่ลงทะเบียน"
+    "string": "ไม่ต้องกังวลหากคุณยังไม่ต้องการลงทะเบียน คุณสามารถชำระเงินได้ เราใส่ใจคุณมากพอ ๆ กับผู้ใช้ที่ลงทะเบียน"
   },
   "components_dot_CheckoutLogin_dot_SignInForm_dot_2856837597": {
     "string": "ลงทะเบียน"
@@ -314,7 +314,7 @@
     "string": "กลับหน้าแรก"
   },
   "components_dot_NotFound_dot_index_dot_1782529840": {
-    "string": "คุณอาจพิมพ์ที่อยู่ผิดหรือหน้าเว็บอาจย้ายไป"
+    "string": "คุณอาจพิมพ์ลิงค์ผิดหรือหน้าเว็บอาจย้ายไป"
   },
   "components_dot_NotFound_dot_index_dot_3141549744": {
     "string": "ขออภัยในความผิดพลาดและหวังว่าคุณจะมีวันที่ดี"
@@ -333,16 +333,16 @@
     "string": "{itemsQuantity,plural,one {{itemsQuantity} item} other {{itemsQuantity} items}}"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Cart_dot_2426849470": {
-    "string": "ไปที่กระเป๋าของฉัน"
+    "string": "ไปที่ตะกร้าของฉัน"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_3515754810": {
-    "string": "ช็อปปิ้งต่อ"
+    "string": "ช็อปต่อ"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_4121934554": {
-    "string": "คุณยังไม่ได้เพิ่มอะไรลงในกระเป๋า เรามั่นใจว่าคุณจะพบบางอย่างในร้านของเรา"
+    "string": "คุณยังไม่ได้เพิ่มอะไรลงในตะกร้า เรามั่นใจว่าคุณจะพบบางอย่างที่คุณสนใจในร้านของเรา"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_966560142": {
-    "string": "กระเป๋าของคุณว่างเปล่า"
+    "string": "ตะกร้าของคุณว่างเปล่า"
   },
   "components_dot_OverlayManager_dot_Cart_dot_ProductList_dot_3897981513": {
     "string": "จำนวน : {quantity}"
@@ -372,25 +372,25 @@
     "string": "เข้าสู่ระบบ"
   },
   "components_dot_OverlayManager_dot_Password_dot_index_dot_4028609483": {
-    "string": "รีเซ็ทรหัสผ่าน"
+    "string": "ตั้งรหัสผ่านใหม่"
   },
   "components_dot_OverlayManager_dot_Search_dot_NothingFound_dot_1777769494": {
     "string": "อย่ายอมแพ้ - ตรวจสอบตัวสะกดนึกถึงบางสิ่งที่เฉพาะเจาะจงน้อยลงแล้วใช้แถบค้นหาด้านบน"
   },
   "components_dot_OverlayManager_dot_Search_dot_NothingFound_dot_3166222023": {
-    "string": "ขออภัยเราไม่สามารถจับคู่ผลการค้นหาใด ๆ : {search}"
+    "string": "ขออภัยเราไม่สามารถค้นหาสินค้าที่คุณต้องการด้วยคำว่า : {search}"
   },
   "components_dot_OverlayManager_dot_Search_dot_Search_dot_4112727608": {
-    "string": "โชว์ผลลัพธ์ทั้งหมด"
+    "string": "แสดงผลลัพธ์ทั้งหมด"
   },
   "components_dot_PasswordResetRequestForm_dot_index_dot_1587628595": {
     "string": "ตรวจสอบกล่องจดหมายของคุณ"
   },
   "components_dot_PasswordResetRequestForm_dot_index_dot_2925394684": {
-    "string": "รีเซ็ทรหัสผ่าน"
+    "string": "ตั้งค่ารหัสผ่านใหม่"
   },
   "components_dot_PasswordResetRequestForm_dot_index_dot_805890313": {
-    "string": "กรุณากรอกอีเมลเพื่อรับลิงค์รีเซ็ทรหัสผ่าน"
+    "string": "กรุณากรอกอีเมลเพื่อรับลิงค์ตั้งค่ารหัสผ่าน"
   },
   "components_dot_Select_dot_SelectOptionsList_dot_1394135378": {
     "string": "ไม่มีตัวเลือก"
@@ -405,10 +405,10 @@
     "string": "ภาษา"
   },
   "intl_dot_checkoutMessages_dot_addressNextActionName": {
-    "string": "ทำต่อตัวเลือกการจัดส่ง"
+    "string": "ตัวเลือกการจัดส่ง"
   },
   "intl_dot_checkoutMessages_dot_billingAddress": {
-    "string": "ที่อยู่ในการจัดส่งบิล"
+    "string": "ที่อยู่ในการออกบิล"
   },
   "intl_dot_checkoutMessages_dot_continueShopping": {
     "string": "เลือกสินค้าต่อ"
@@ -417,10 +417,10 @@
     "string": "วิธีการชำระเงิน"
   },
   "intl_dot_checkoutMessages_dot_paymentNextActionName": {
-    "string": "ทำต่อสรุปคำสั่งซื้อ"
+    "string": "สรุปคำสั่งซื้อ"
   },
   "intl_dot_checkoutMessages_dot_reviewNextActionName": {
-    "string": "สถานที่การสั่งซื้อ"
+    "string": "สั่งซื้อ"
   },
   "intl_dot_checkoutMessages_dot_reviewOrder": {
     "string": "ตรวจสอบคำสั่งซื้อ"
@@ -432,7 +432,7 @@
     "string": "ตัวเลือกการจัดส่ง"
   },
   "intl_dot_checkoutMessages_dot_shippingNextActionName": {
-    "string": "ทำต่อวิธีการชำระเงิน"
+    "string": "วิธีการชำระเงิน"
   },
   "intl_dot_checkoutMessages_dot_stepNameAddress": {
     "string": "ที่อยู่"
@@ -459,10 +459,10 @@
     "string": "ยกเลิก"
   },
   "intl_dot_commonMessages_dot_checkout": {
-    "string": "เช็คเอ๊าท์"
+    "string": "ซื้อ"
   },
   "intl_dot_commonMessages_dot_choosePaymentMethod": {
-    "string": "โปรดเลือกวิธ๊การชำระเงิน"
+    "string": "โปรดเลือกวิธีการชำระเงิน"
   },
   "intl_dot_commonMessages_dot_clearFilterHeader": {
     "string": "ล้างตัวกรอง"
@@ -570,7 +570,7 @@
     "string": "ราคา"
   },
   "intl_dot_commonMessages_dot_variant": {
-    "string": "Variant"
+    "string": "ตัวเลือกสินค้า"
   },
   "intl_dot_commonMessages_dot_youMightLike": {
     "string": "คุณอาจชอบ"
@@ -585,19 +585,19 @@
     "string": "สำเร็จ"
   },
   "intl_dot_orderStatusMessages_dot_partiallyFulfilled": {
-    "string": "Partially fulfilled"
+    "string": "จัดส่งบางส่วน"
   },
   "intl_dot_orderStatusMessages_dot_unfulfilled": {
     "string": "ไม่สำเร็จ"
   },
   "intl_dot_paymentStatusMessages_dot_fullyCharged": {
-    "string": "ชาร์จเต็มจำนวน"
+    "string": "เก็บเงินเต็มจำนวน"
   },
   "intl_dot_paymentStatusMessages_dot_fullyRefunded": {
     "string": "คืนเงินเต็มจำนวน"
   },
   "intl_dot_paymentStatusMessages_dot_notCharged": {
-    "string": "ไม่ชาร์จ"
+    "string": "ไม่เก็บเงิน"
   },
   "intl_dot_paymentStatusMessages_dot_partiallyCharged": {
     "string": "เรียกเก็บเงินบางส่วน"
@@ -627,11 +627,11 @@
     "string": "เรียงจากเก่าสุด"
   },
   "userAccount_dot_views_dot_OrderDetails_dot_Page_dot_1857586798": {
-    "string": "หมายเลขออเดอร์ของคุณคือ : {orderNum}"
+    "string": "หมายเลขการสั่งซื้อของคุณคือ : {orderNum}"
   },
   "userAccount_dot_views_dot_OrderDetails_dot_Page_dot_2670827143": {
     "context": "action in popup menu in order view",
-    "string": "ดาวน์โหลดใบกำกับสินค้า"
+    "string": "ดาวน์โหลดใบสั่งซื้อสินค้า"
   },
   "userAccount_dot_views_dot_OrderDetails_dot_Page_dot_624688748": {
     "string": "กลับไปที่ประวัติการสั่งซื้อ"
@@ -652,7 +652,7 @@
     "string": "ลดสูงสุด 70%"
   },
   "views_dot_Product_dot_Other_dot_3212906417": {
-    "string": "สินค้าอื่น ๆ ในแค็ตตาล็อกนี้"
+    "string": "สินค้าอื่น ๆ ในหมวดหมู่นี้"
   },
   "views_dot_Search_dot_Page_dot_2865432515": {
     "string": "คำที่ต้องการค้นหา"
