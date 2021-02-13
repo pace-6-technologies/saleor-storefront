@@ -1,400 +1,438 @@
 {
   "@next_dot_components_dot_atoms_dot_AddNewTile_dot_AddNewTile_dot_2493765518": {
-    "string": "Add new {type}"
+    "string": "เพิ่มที่อยู่"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_214739616": {
-    "string": "Play with <emphasis>GraphQL API</emphasis>"
+    "string": "ลองใช้งาน <emphasis>GraphQL API</emphasis>"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_2367386033": {
-    "string": "API"
+    "string": "เอพีไอ"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_2844777114": {
-    "string": "Explore <emphasis>Store’s dashboard</emphasis>"
+    "string": "ดู <emphasis>แดชบอร์ด</emphasis>"
   },
   "@next_dot_components_dot_atoms_dot_DemoBanner_dot_DemoBanner_dot_3662390044": {
     "string": "แดชบอร์ด"
   },
   "@next_dot_components_dot_atoms_dot_DropdownSelect_dot_DropdownSelect_dot_3280510613": {
-    "string": "Sort by:"
+    "string": "เรียงโดย :"
   },
   "@next_dot_components_dot_molecules_dot_AccountMenuMobile_dot_AccountMenuMobile_dot_2132071990": {
-    "string": "Go to"
+    "string": "ไปที่"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_AccountTile_dot_3253048083": {
-    "string": "Personal details"
+    "string": "ข้อมูลส่วนตัว"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_AccountTile_dot_3843483622": {
-    "string": "MY DATA"
+    "string": "ข้อมูลของฉัน"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordChangeForm_dot_1254879564": {
-    "string": "New Password"
+    "string": "รหัสผ่านใหม่"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordChangeForm_dot_2218114941": {
-    "string": "Old Password"
+    "string": "รหัสผ่านเก่า"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordChangeForm_dot_2369435044": {
-    "string": "Required field"
+    "string": "ข้อมูลจำเป็น"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordChangeForm_dot_2799926859": {
-    "string": "Confirm Password"
+    "string": "ยืนยันรหัสผ่าน"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordChangeForm_dot_4253911811": {
-    "string": "Passwords do not match"
+    "string": "รหัสผ่านไม่ตรงกัน"
   },
   "@next_dot_components_dot_molecules_dot_AccountTabTiles_dot_PasswordTile_dot_3445609170": {
-    "string": "MY PASSWORD"
+    "string": "รหัสผ่านของฉัน"
   },
   "@next_dot_components_dot_molecules_dot_AddToCartButton_dot_AddToCartButton_dot_81047562": {
-    "string": "Add to basket"
+    "string": "เพิ่มลงตะกร้าสินค้า"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_1224809208": {
-    "string": "Default Address"
+    "string": "ที่อยู่ตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_1578192486": {
-    "string": "Default Billing Address"
+    "string": "ที่อยู่ในการจัดส่งบิล"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_2131178753": {
-    "string": "Set as default shipping address"
+    "string": "ตั้งเป็นที่อยู่จัดส่งตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_3096438859": {
-    "string": "Set as default billing address"
+    "string": "ตั้งเป็นที่อยู่ในการจัดออกบิลตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AddressTile_dot_AddressTile_dot_4109348993": {
-    "string": "Default Shipping Address"
+    "string": "ที่อยู่จัดส่งตั้งต้น"
   },
   "@next_dot_components_dot_molecules_dot_AttributeValuesChecklist_dot_AttributeValuesChecklist_dot_2029012727": {
-    "string": "VIEW ALL OPTIONS"
+    "string": "ดูตัวเลือกทั้งหมด"
   },
   "@next_dot_components_dot_molecules_dot_OrderTabel_dot_OrderTabel_dot_1148029984": {
-    "string": "Value"
+    "string": "ค่า"
   },
   "@next_dot_components_dot_molecules_dot_OrderTabel_dot_OrderTabel_dot_1633831221": {
-    "string": "Date of Order"
+    "string": "วันที่สั่งสินค้า"
   },
   "@next_dot_components_dot_molecules_dot_OrderTabel_dot_OrderTabel_dot_2387666633": {
-    "string": "Index Number"
+    "string": "ลำดับที่"
   },
   "@next_dot_components_dot_molecules_dot_OrderTabel_dot_OrderTabel_dot_724329054": {
-    "string": "Products Ordered"
+    "string": "สินค้าที่สั่งซื้อ"
   },
   "@next_dot_components_dot_molecules_dot_ProductDescription_dot_ProductDescription_dot_2623707255": {
-    "string": "DESCRIPTION"
+    "string": "คำอธิบาย"
   },
   "@next_dot_components_dot_molecules_dot_ProductDescription_dot_ProductDescription_dot_308156425": {
-    "string": "ATTRIBUTES"
+    "string": "คุณลักษณะ"
   },
   "@next_dot_components_dot_molecules_dot_ProductListHeader_dot_ProductListHeader_dot_3317426832": {
-    "string": "Products found:"
+    "string": "สินค้าที่พบ"
   },
   "@next_dot_components_dot_molecules_dot_ResetPasswordForm_dot_ResetPasswordForm_dot_1865992141": {
-    "string": "Please provide new password"
+    "string": "กรุณากรอกรหัสผ่านใหม่"
   },
   "@next_dot_components_dot_molecules_dot_ResetPasswordForm_dot_ResetPasswordForm_dot_2266763214": {
-    "string": "Retype password"
+    "string": "พิมพ์รหัสผ่านอีกครั้ง"
   },
   "@next_dot_components_dot_molecules_dot_ResetPasswordForm_dot_ResetPasswordForm_dot_2746979176": {
-    "string": "It seems that token for password reset is not valid anymore."
+    "string": "ดูเหมือนว่าโทเค็นสำหรับการรีเซ็ตรหัสผ่านจะใช้ไม่ได้อีกต่อไป"
   },
   "@next_dot_components_dot_molecules_dot_ResetPasswordForm_dot_ResetPasswordForm_dot_3951836694": {
-    "string": "SET NEW PASSWORD"
+    "string": "ตั้งรหัสผ่านใหม่"
   },
   "@next_dot_components_dot_molecules_dot_ResetPasswordForm_dot_ResetPasswordForm_dot_4028609483": {
-    "string": "Reset your password"
+    "string": "รีเซ็ตรหัสผ่าน"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_1139500589": {
     "string": "ประเทศ"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_1363074570": {
-    "string": "Address line 1"
+    "string": "ที่อยู่บรรทัดที่ 1"
+  },
+  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_20991540": {
+    "string": "จังหวัด"
+  },
+  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2388181533": {
+    "string": "อำเภอ"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_253031977": {
-    "string": "เมือง"
+    "string": "ตำบล"
+  },
+  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2098800374": {
+    "string": "รหัสไปรษณีย์"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2796540622": {
-    "string": "ZIP/Postal Code"
+    "string": "รหัสไปรษณีย์"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2950411968": {
-    "string": "Company Name (Optional)"
+    "string": "ชื่อบริษัท (ไม่จำเป็นต้องระบุ)"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_3121963259": {
-    "string": "Address line 2"
+    "string": "ที่อยู่บรรทัดที่ 2"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_404705399": {
-    "string": "State/province"
+    "string": "จังหวัด"
   },
   "@next_dot_components_dot_organisms_dot_AddressGridSelector_dot_AddressGridSelector_dot_2132027491": {
-    "string": "address"
+    "string": "ที่อยู่"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenConfirmationErrorMessages_dot_cancelled": {
     "context": "Adyen payment gateway error",
-    "string": "Payment was cancelled."
+    "string": "การชำระเงินถูกยกเลิก"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenConfirmationErrorMessages_dot_error": {
     "context": "Adyen payment gateway error",
-    "string": "Error processing payment occured."
+    "string": "เกิดข้อผิดพลาดในการประมวลผลการชำระเงิน"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenConfirmationErrorMessages_dot_general": {
     "context": "Adyen payment gateway error",
-    "string": "Payment confirmation went wrong."
+    "string": "การยืนยันการชำระเงินผิดพลาด"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenConfirmationErrorMessages_dot_refused": {
     "context": "Adyen payment gateway error",
-    "string": "The payment was refused. Try the payment again using a different payment method or card."
+    "string": "การชำระเงินถูกปฏิเสธ ลองชำระเงินอีกครั้งโดยใช้วิธีการชำระเงินหรือบัตรอื่น"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenErrorMessages_dot_cannotHandlePaymentConfirmation": {
     "context": "Adyen payment gateway error",
-    "string": "Payment gateway did not provide payment confirmation handler."
+    "string": "ช่องทางการชำระเงินไม่มีเครื่องจัดการการยืนยันการชำระเงิน"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenErrorMessages_dot_invalidPaymentSubmission": {
     "context": "Adyen payment gateway error",
-    "string": "Invalid payment submission."
+    "string": "การส่งการชำระเงินไม่ถูกต้อง"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenErrorMessages_dot_paymentMalformedConfirmationData": {
     "context": "Adyen payment gateway error",
-    "string": "Payment needs confirmation but data required for confirmation received from the server is malformed."
+    "string": "การชำระเงินต้องการการยืนยัน แต่ข้อมูลที่จำเป็นสำหรับการยืนยันที่ได้รับจากเซิร์ฟเวอร์ผิดรูปแบบ"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenErrorMessages_dot_paymentNoConfirmationData": {
     "context": "Adyen payment gateway error",
-    "string": "Payment needs confirmation but data required for confirmation not received from the server."
+    "string": "การชำระเงินต้องการการยืนยัน แต่ข้อมูลที่จำเป็นสำหรับการยืนยันไม่ได้รับจากเซิร์ฟเวอร์"
   },
   "@next_dot_components_dot_organisms_dot_AdyenPaymentGateway_dot_AdyenPaymentGateway_dot_adyenErrorMessages_dot_unknownPayment": {
     "context": "Adyen payment gateway error",
-    "string": "Unknown payment submission error occured."
+    "string": "เกิดข้อผิดพลาดในการส่งการชำระเงิน"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_4121934554": {
+    "context": "cart sidebar description",
+    "string": "คุณยังไม่ได้เพิ่มอะไรลงในตะกร้าสินค้า เรามั่นใจว่าคุณจะพบบางอย่างที่คุณสนใจในร้านของเรา"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3173718889": {
+    "string": "ตะกร้าของฉัน"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3330213154": {
+    "context": "cart sidebar title",
+    "string": "ไม่มีสินค้าในตะกร้า"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_332948942": {
+    "context": "button",
+    "string": "ซื้อ"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3452230111": {
+    "context": "button",
+    "string": "ไปที่ตะกร้าของฉัน"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_36913639": {
+    "context": "button",
+    "string": "เลือกสินค้าต่อ"
   },
   "@next_dot_components_dot_organisms_dot_CartSummary_dot_CartSummary_dot_2088494495": {
-    "string": "Cart Summary"
+    "string": "สินค้าในตะกร้า"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutAddress_dot_CheckoutAddress_dot_3912924864": {
-    "string": "Same as shipping address"
+    "string": "เหมือนที่อยู่จัดส่ง"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutPayment_dot_CheckoutPayment_dot_3382401165": {
-    "string": "Do you have a gift card voucher or discount code?"
+    "string": "คุณมีโค้ดส่วนลดหรือเปล่า ?"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutReview_dot_CheckoutReview_dot_348821000": {
     "string": "วีธีชำระเงิน"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutReview_dot_CheckoutReview_dot_3577164776": {
-    "string": "Shipping Method"
+    "string": "วิธีการจัดส่ง"
   },
   "@next_dot_components_dot_organisms_dot_CheckoutReview_dot_CheckoutReview_dot_4282475982": {
-    "string": "Billing Address"
+    "string": "ที่อยู่ในการออกบิล"
   },
   "@next_dot_components_dot_organisms_dot_DiscountForm_dot_DiscountForm_dot_3476123": {
-    "string": "Apply"
+    "string": "ใช้"
   },
   "@next_dot_components_dot_organisms_dot_ProductList_dot_ProductList_dot_2783099424": {
-    "string": "More +"
+    "string": "เพิ่มเติม +"
   },
   "@next_dot_components_dot_organisms_dot_ProductVariantPicker_dot_ProductVariantAttributeSelect_dot_1125254976": {
-    "string": "Please select {selectLabel}"
+    "string": "กรุณาเลือก {selectLabel}"
   },
   "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_1995277831": {
     "string": "ขอบคุณ"
   },
   "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_2116351823": {
-    "string": "for your order!"
+    "string": "สำหรับการสั่งซื้อของคุณ !"
   },
   "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_2999163789": {
-    "string": "Your order number is"
+    "string": "หมายเลขออเดอร์ของคุณคือ "
   },
   "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_3364990704": {
-    "string": "We’ve emailed you an order confirmation, and we’ll notify you when the order has been shipped."
+    "string": "เราได้ส่งอีเมลยืนยันคำสั่งซื้อถึงคุณแล้วและเราจะแจ้งให้คุณทราบเมื่อมีการจัดส่งสินค้า"
   },
   "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_3752098833": {
-    "string": "ORDER DETAILS"
+    "string": "รายละเอียดคำสั่งซื้อ"
   },
   "@next_dot_components_dot_templates_dot_CartEmpty_dot_CartEmpty_dot_2488840083": {
-    "string": "looks empty"
+    "string": "ดูว่างเปล่า"
   },
   "@next_dot_components_dot_templates_dot_CartEmpty_dot_CartEmpty_dot_2896212356": {
-    "string": "Maybe you haven’t made your choices yet"
+    "string": "บางทีคุณยังไม่ได้ตัดสินใจ"
   },
   "@next_dot_components_dot_templates_dot_CartEmpty_dot_CartEmpty_dot_3578601618": {
     "string": "ตระกร้าสินค้า"
   },
   "@next_dot_pages_dot_CartPage_dot_CartPage_dot_1304869656": {
-    "string": "PROCEED TO CHECKOUT"
+    "string": "ทำการสั่งสินค้า"
   },
   "@next_dot_pages_dot_CartPage_dot_CartPage_dot_3173718889": {
-    "string": "My Cart"
+    "string": "ตะกร้าของฉัน"
   },
   "@next_dot_pages_dot_CheckoutPage_dot_subpages_dot_CheckoutAddressSubpage_dot_2558335134": {
-    "string": "Please provide billing address."
+    "string": "กรุณากรอกที่อยู่ออกบิล"
   },
   "@next_dot_pages_dot_CheckoutPage_dot_subpages_dot_CheckoutAddressSubpage_dot_929802659": {
-    "string": "Please provide shipping address."
+    "string": "กรุณากรอกที่อยู่ในการจัดส่ง"
   },
   "@next_dot_pages_dot_OrdersHistory_dot_OrdersHistory_dot_1138265409": {
-    "string": "Load more"
+    "string": "โหลดเพิ่มเติม"
   },
   "account_dot_AddressBook_dot_AddressBook_dot_2776756156": {
     "string": "แก้ไขที่อยู่"
   },
   "app_dot_Notifications_dot_1053546789": {
-    "string": "To update the application to the latest version, please refresh the page!"
+    "string": "เราได้ทำการปรับปรุงเว็บของเรา กดรีเฟรชเพื่อรับการความสามารถใหม่ๆ"
   },
   "app_dot_Notifications_dot_1308518649": {
-    "string": "Refresh"
+    "string": "รีเฟรช"
   },
   "app_dot_Notifications_dot_1917823234": {
-    "string": "You are now logged in"
+    "string": "เข้าสู่ระบบสำเร็จ"
   },
   "app_dot_Notifications_dot_2378877294": {
-    "string": "You are now logged out"
+    "string": "ออกจากระบบสำเร็จ"
   },
   "app_dot_Notifications_dot_795565": {
-    "string": "New version is available!"
+    "string": "มีเวอร์ชั่นใหม่แล้ว !"
   },
   "components_dot_Breadcrumbs_dot_index_dot_1347475195": {
-    "string": "Back"
+    "string": "ย้อนกลับ"
   },
   "components_dot_CartTable_dot_Table_dot_1603950169": {
-    "string": "Delivery Cost"
+    "string": "ค่าขนส่ง"
   },
   "components_dot_CartTable_dot_Table_dot_2179891060": {
-    "string": "Total Cost"
+    "string": "ค่าใช้จ่ายทั้งหมด"
   },
   "components_dot_CartTable_dot_Table_dot_2875988277": {
-    "string": "Discount: {discountName}"
+    "string": "ส่วนลด : {discountName}"
   },
   "components_dot_CheckoutLogin_dot_CheckoutAsGuest_dot_1006283488": {
-    "string": "Continue as a guest"
+    "string": "ทำต่อโดยยังไม่มีบัญชี"
   },
   "components_dot_CheckoutLogin_dot_CheckoutAsGuest_dot_2132450234": {
-    "string": "create an account"
+    "string": "สมัครบัญชีใหม่"
   },
   "components_dot_CheckoutLogin_dot_CheckoutAsGuest_dot_3896074202": {
-    "string": "or you can"
+    "string": "หรือคุณสามารถ"
   },
   "components_dot_CheckoutLogin_dot_CheckoutAsGuest_dot_647198093": {
-    "string": "If you don’t wish to register an account, don’t worry. You can checkout as a guest. We care about you just as much as any registered user."
+    "string": "ไม่ต้องกังวลหากคุณยังไม่ต้องการลงทะเบียน คุณสามารถชำระเงินได้ เราใส่ใจคุณมากพอ ๆ กับผู้ใช้ที่ลงทะเบียน"
   },
   "components_dot_CheckoutLogin_dot_SignInForm_dot_2856837597": {
-    "string": "Registered user"
+    "string": "ลงทะเบียน"
   },
   "components_dot_LoginForm_dot_index_dot_1405865627": {
-    "string": "Sign in"
+    "string": "เข้าสู่ระบบ"
   },
   "components_dot_MainMenu_dot_MainMenu_dot_4144939532": {
-    "string": "Offline"
+    "string": "ออฟไลน์"
   },
   "components_dot_NotFound_dot_index_dot_1723676032": {
-    "string": "Back to home"
+    "string": "กลับหน้าแรก"
   },
   "components_dot_NotFound_dot_index_dot_1782529840": {
-    "string": "You may have mistyped the address or the page may have moved."
+    "string": "คุณอาจพิมพ์ลิงค์ผิดหรือหน้าเว็บอาจย้ายไป"
   },
   "components_dot_NotFound_dot_index_dot_3141549744": {
-    "string": "We’re sorry for the error and hope you’ll have a good day."
+    "string": "ขออภัยในความผิดพลาดและหวังว่าคุณจะมีวันที่ดี"
   },
   "components_dot_NotFound_dot_index_dot_3478767873": {
     "string": "404"
   },
   "components_dot_NotFound_dot_index_dot_680965574": {
-    "string": "We can’t seem to find a page you are looking for!"
+    "string": "ดูเหมือนเราจะไม่พบหน้าที่คุณกำลังค้นหา !"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Cart_dot_1316031908": {
-    "string": "My bag,"
+    "string": "กระเป๋าของฉัน"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Cart_dot_1397761112": {
     "context": "items quantity in cart",
     "string": "{itemsQuantity,plural,one {{itemsQuantity} item} other {{itemsQuantity} items}}"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Cart_dot_2426849470": {
-    "string": "Go to my bag"
+    "string": "ไปที่ตะกร้าของฉัน"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_3515754810": {
-    "string": "Continue Shopping"
+    "string": "ช็อปต่อ"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_4121934554": {
-    "string": "You haven’t added anything to your bag. We’re sure you’ll find something in our store"
+    "string": "คุณยังไม่ได้เพิ่มอะไรลงในตะกร้า เรามั่นใจว่าคุณจะพบบางอย่างที่คุณสนใจในร้านของเรา"
   },
   "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_966560142": {
-    "string": "Your bag is empty"
+    "string": "ตะกร้าของคุณว่างเปล่า"
   },
   "components_dot_OverlayManager_dot_Cart_dot_ProductList_dot_3897981513": {
-    "string": "Qty: {quantity}"
+    "string": "จำนวน : {quantity}"
   },
   "components_dot_OverlayManager_dot_Login_dot_ForgottenPassword_dot_1214263298": {
-    "string": "Have you forgotten your password?"
+    "string": "หากคุณลืมรหัสผ่าน"
   },
   "components_dot_OverlayManager_dot_Login_dot_ForgottenPassword_dot_1781368875": {
-    "string": "Click Here"
+    "string": "คลิกที่นี่"
   },
   "components_dot_OverlayManager_dot_Login_dot_RegisterForm_dot_2556234295": {
     "string": "ลงทะเบียน"
   },
   "components_dot_OverlayManager_dot_Login_dot_RegisterForm_dot_2622394113": {
-    "string": "Please check your e-mail for further instructions"
+    "string": "โปรดตรวจสอบอีเมลของคุณสำหรับคำแนะนำเพิ่มเติม"
   },
   "components_dot_OverlayManager_dot_Login_dot_RegisterForm_dot_590842025": {
-    "string": "New user has been created"
+    "string": "สร้างผู้ใช้ใหม่แล้ว"
   },
   "components_dot_OverlayManager_dot_Login_dot_index_dot_282922692": {
-    "string": "Saleor account"
+    "string": "บัญชี {name}"
   },
   "components_dot_OverlayManager_dot_Login_dot_index_dot_3254057623": {
-    "string": "Register new account"
+    "string": "สมัครบัญชีใหม่"
   },
   "components_dot_OverlayManager_dot_Login_dot_index_dot_3293735236": {
-    "string": "Sign in to account"
+    "string": "เข้าสู่ระบบ"
   },
   "components_dot_OverlayManager_dot_Password_dot_index_dot_4028609483": {
-    "string": "Reset your password"
+    "string": "ตั้งรหัสผ่านใหม่"
   },
   "components_dot_OverlayManager_dot_Search_dot_NothingFound_dot_1777769494": {
-    "string": "Don’t give up - check the spelling, think of something less specific and then use the search bar above."
+    "string": "อย่ายอมแพ้ - ตรวจสอบตัวสะกดนึกถึงบางสิ่งที่เฉพาะเจาะจงน้อยลงแล้วใช้แถบค้นหาด้านบน"
   },
   "components_dot_OverlayManager_dot_Search_dot_NothingFound_dot_3166222023": {
-    "string": "Sorry, but we couldn’t match any search results for: {search}"
+    "string": "ขออภัยเราไม่สามารถค้นหาสินค้าที่คุณต้องการด้วยคำว่า : {search}"
   },
   "components_dot_OverlayManager_dot_Search_dot_Search_dot_4112727608": {
-    "string": "Show all results"
+    "string": "แสดงผลลัพธ์ทั้งหมด"
   },
   "components_dot_PasswordResetRequestForm_dot_index_dot_1587628595": {
-    "string": "Check your inbox"
+    "string": "ตรวจสอบกล่องจดหมายของคุณ"
   },
   "components_dot_PasswordResetRequestForm_dot_index_dot_2925394684": {
-    "string": "Reset password"
+    "string": "ตั้งค่ารหัสผ่านใหม่"
   },
   "components_dot_PasswordResetRequestForm_dot_index_dot_805890313": {
-    "string": "Please provide us your email address so we can share you a link to reset your password"
+    "string": "กรุณากรอกอีเมลเพื่อรับลิงค์ตั้งค่ารหัสผ่าน"
   },
   "components_dot_Select_dot_SelectOptionsList_dot_1394135378": {
-    "string": "No Options"
+    "string": "ไม่มีตัวเลือก"
   },
   "intl_dot_checkoutMessages_dot_addNewAddress": {
-    "string": "Add new address"
+    "string": "เพิ่มที่อยู่ใหม่"
+  },
+  "intl_dot_commonMessages_dot_goToMyCart": {
+    "string": "ไปที่ตะกร้าของฉัน"
+  },
+  "intl_dot_commonMessages_dot_language": {
+    "string": "ภาษา"
   },
   "intl_dot_checkoutMessages_dot_addressNextActionName": {
-    "string": "Continue to Shipping"
+    "string": "ตัวเลือกการจัดส่ง"
   },
   "intl_dot_checkoutMessages_dot_billingAddress": {
-    "string": "BILLING ADDRESS"
+    "string": "ที่อยู่ในการออกบิล"
   },
   "intl_dot_checkoutMessages_dot_continueShopping": {
-    "string": "CONTINUE SHOPPING"
+    "string": "เลือกสินค้าต่อ"
   },
   "intl_dot_checkoutMessages_dot_paymentMethod": {
-    "string": "PAYMENT METHOD"
+    "string": "วิธีการชำระเงิน"
   },
   "intl_dot_checkoutMessages_dot_paymentNextActionName": {
-    "string": "Continue to Review"
+    "string": "สรุปคำสั่งซื้อ"
   },
   "intl_dot_checkoutMessages_dot_reviewNextActionName": {
-    "string": "Place order"
+    "string": "สั่งซื้อ"
   },
   "intl_dot_checkoutMessages_dot_reviewOrder": {
-    "string": "REVIEW ORDER"
+    "string": "ตรวจสอบคำสั่งซื้อ"
   },
   "intl_dot_checkoutMessages_dot_shippingAddress": {
-    "string": "Shipping Address"
+    "string": "ที่อยู่จัดส่ง"
   },
   "intl_dot_checkoutMessages_dot_shippingMethod": {
-    "string": "SHIPPING METHOD"
+    "string": "ตัวเลือกการจัดส่ง"
   },
   "intl_dot_checkoutMessages_dot_shippingNextActionName": {
-    "string": "Continue to Payment"
+    "string": "วิธีการชำระเงิน"
   },
   "intl_dot_checkoutMessages_dot_stepNameAddress": {
     "string": "ที่อยู่"
@@ -403,7 +441,7 @@
     "string": "การชำระเงิน"
   },
   "intl_dot_checkoutMessages_dot_stepNameReview": {
-    "string": "Review"
+    "string": "สรุปคำสั่งซื้อ"
   },
   "intl_dot_checkoutMessages_dot_stepNameShipping": {
     "string": "ตัวเลือกการจัดส่ง"
@@ -415,70 +453,70 @@
     "string": "เพิ่ม"
   },
   "intl_dot_commonMessages_dot_addressBook": {
-    "string": "Address book"
+    "string": "ที่อยู่"
   },
   "intl_dot_commonMessages_dot_cancel": {
     "string": "ยกเลิก"
   },
   "intl_dot_commonMessages_dot_checkout": {
-    "string": "เช็คเอ๊าท์"
+    "string": "ซื้อ"
   },
   "intl_dot_commonMessages_dot_choosePaymentMethod": {
-    "string": "Please choose payment method."
+    "string": "โปรดเลือกวิธีการชำระเงิน"
   },
   "intl_dot_commonMessages_dot_clearFilterHeader": {
-    "string": "CLEAR FILTERS"
+    "string": "ล้างตัวกรอง"
   },
   "intl_dot_commonMessages_dot_eMail": {
-    "string": "Email Address"
+    "string": "อีเมล"
   },
   "intl_dot_commonMessages_dot_filterHeader": {
-    "string": "FILTERS"
+    "string": "ตัวกรอง"
   },
   "intl_dot_commonMessages_dot_firstName": {
-    "string": "First Name"
+    "string": "ชื่อจริง"
   },
   "intl_dot_commonMessages_dot_home": {
     "string": "หน้าแรก"
   },
   "intl_dot_commonMessages_dot_lastName": {
-    "string": "Last Name"
+    "string": "นามสกุล"
   },
   "intl_dot_commonMessages_dot_loading": {
-    "string": "Loading"
+    "string": "กำลังโหลด"
   },
   "intl_dot_commonMessages_dot_logOut": {
-    "string": "Log Out"
+    "string": "ออกจากระบบ"
   },
   "intl_dot_commonMessages_dot_lowStock": {
-    "string": "Low stock"
+    "string": "สต็อกเหลือน้อย"
   },
   "intl_dot_commonMessages_dot_maxQtyIs": {
-    "string": "Maximum quantity is {maxQuantity}"
+    "string": "ปริมาณสูงสุดคือ {maxQuantity}"
   },
   "intl_dot_commonMessages_dot_myAccount": {
-    "string": "My Account"
+    "string": "บัญชีของฉัน"
   },
   "intl_dot_commonMessages_dot_noItemsAvailable": {
-    "string": "No items available"
+    "string": "ไม่มีรายการ"
   },
   "intl_dot_commonMessages_dot_noPurchaseAvailable": {
-    "string": "Not available for purchase"
+    "string": "ไม่สามารถซื้อได้"
   },
   "intl_dot_commonMessages_dot_orderHistory": {
-    "string": "Order history"
+    "string": "ประวัติการสั่งซื้อ"
   },
   "intl_dot_commonMessages_dot_outOfStock": {
-    "string": "Out of stock"
+    "string": "สินค้าหมด"
   },
   "intl_dot_commonMessages_dot_password": {
     "string": "รหัสผ่าน"
   },
   "intl_dot_commonMessages_dot_phone": {
-    "string": "Phone"
+    "string": "เบอร์มือถือ"
   },
   "intl_dot_commonMessages_dot_phoneNumber": {
-    "string": "Phone number: {phone}"
+    "string": "เบอร์มือถือ : {phone}"
   },
   "intl_dot_commonMessages_dot_price": {
     "string": "ราคา"
@@ -487,13 +525,13 @@
     "string": "สินค้า"
   },
   "intl_dot_commonMessages_dot_promoCode": {
-    "string": "Promo code"
+    "string": "โค้ดโปรโมชั่น"
   },
   "intl_dot_commonMessages_dot_provideEmailAddress": {
-    "string": "Please provide email address."
+    "string": "กรุณากรอกอีเมล"
   },
   "intl_dot_commonMessages_dot_purchaseAvailableOn": {
-    "string": "Will become available for purchase on {date} at {time}"
+    "string": "จะสามารถซื้อได้ในวันที่ {date} at {time}"
   },
   "intl_dot_commonMessages_dot_qty": {
     "string": "จำนวน"
@@ -505,7 +543,7 @@
     "string": "บันทึก"
   },
   "intl_dot_commonMessages_dot_search": {
-    "string": "search"
+    "string": "ค้นหา"
   },
   "intl_dot_commonMessages_dot_shipping": {
     "string": "ตัวเลือกการจัดส่ง"
@@ -514,7 +552,7 @@
     "string": "อีเมล"
   },
   "intl_dot_commonMessages_dot_showEmail": {
-    "string": "Email: {email}"
+    "string": "อีเมล : {email}"
   },
   "intl_dot_commonMessages_dot_sku": {
     "string": "รหัสสินค้า"
@@ -523,100 +561,100 @@
     "string": "สถานะ"
   },
   "intl_dot_commonMessages_dot_subtotal": {
-    "string": "Subtotal"
+    "string": "ราคาสินค้า"
   },
   "intl_dot_commonMessages_dot_total": {
     "string": "รวมทั้งหมด"
   },
   "intl_dot_commonMessages_dot_totalPrice": {
-    "string": "Total Price"
+    "string": "ราคา"
   },
   "intl_dot_commonMessages_dot_variant": {
-    "string": "Variant"
+    "string": "ตัวเลือกสินค้า"
   },
   "intl_dot_commonMessages_dot_youMightLike": {
-    "string": "You might like"
+    "string": "คุณอาจชอบ"
   },
   "intl_dot_orderStatusMessages_dot_canceled": {
     "string": "ยกเลิกแล้ว"
   },
   "intl_dot_orderStatusMessages_dot_draft": {
-    "string": "Draft"
+    "string": "ร่าง"
   },
   "intl_dot_orderStatusMessages_dot_fulfilled": {
-    "string": "Fulfilled"
+    "string": "สำเร็จ"
   },
   "intl_dot_orderStatusMessages_dot_partiallyFulfilled": {
-    "string": "Partially fulfilled"
+    "string": "จัดส่งบางส่วน"
   },
   "intl_dot_orderStatusMessages_dot_unfulfilled": {
-    "string": "Unfulfilled"
+    "string": "ไม่สำเร็จ"
   },
   "intl_dot_paymentStatusMessages_dot_fullyCharged": {
-    "string": "Fully charged"
+    "string": "เก็บเงินเต็มจำนวน"
   },
   "intl_dot_paymentStatusMessages_dot_fullyRefunded": {
-    "string": "Fully refunded"
+    "string": "คืนเงินเต็มจำนวน"
   },
   "intl_dot_paymentStatusMessages_dot_notCharged": {
-    "string": "Not charged"
+    "string": "ไม่เก็บเงิน"
   },
   "intl_dot_paymentStatusMessages_dot_partiallyCharged": {
-    "string": "Partially charged"
+    "string": "เรียกเก็บเงินบางส่วน"
   },
   "intl_dot_paymentStatusMessages_dot_partiallyRefunded": {
-    "string": "Partially refunded"
+    "string": "คืนเงินบางส่วน"
   },
   "intl_dot_prodListHeaderCommonMsg_dot_sortOptionsClear": {
-    "string": "Clear..."
+    "string": "ไม่มีตัวกรอง"
   },
   "intl_dot_prodListHeaderCommonMsg_dot_sortOptionsName": {
-    "string": "Name Increasing"
+    "string": "เรียงจาก A-Z"
   },
   "intl_dot_prodListHeaderCommonMsg_dot_sortOptionsNameDsc": {
-    "string": "Name Decreasing"
+    "string": "เรียงจาก Z-A"
   },
   "intl_dot_prodListHeaderCommonMsg_dot_sortOptionsPrice": {
-    "string": "Price Low-High"
+    "string": "เรียงจากราคาต่ำสุด"
   },
   "intl_dot_prodListHeaderCommonMsg_dot_sortOptionsPriceDsc": {
-    "string": "Price High-Low"
+    "string": "เรียงจากราคาสูงสุด"
   },
   "intl_dot_prodListHeaderCommonMsg_dot_sortOptionsUpdatedAt": {
-    "string": "Last updated Ascending"
+    "string": "เรียงจากใหม่สุด"
   },
   "intl_dot_prodListHeaderCommonMsg_dot_sortOptionsUpdatedAtDsc": {
-    "string": "Last updated Descending"
+    "string": "เรียงจากเก่าสุด"
   },
   "userAccount_dot_views_dot_OrderDetails_dot_Page_dot_1857586798": {
-    "string": "Your order no.: {orderNum}"
+    "string": "หมายเลขการสั่งซื้อของคุณคือ : {orderNum}"
   },
   "userAccount_dot_views_dot_OrderDetails_dot_Page_dot_2670827143": {
     "context": "action in popup menu in order view",
-    "string": "Download invoice"
+    "string": "ดาวน์โหลดใบสั่งซื้อสินค้า"
   },
   "userAccount_dot_views_dot_OrderDetails_dot_Page_dot_624688748": {
-    "string": "Go back to Order History"
+    "string": "กลับไปที่ประวัติการสั่งซื้อ"
   },
   "views_dot_Home_dot_Page_dot_2366307429": {
-    "string": "Final reduction"
+    "string": "การลดขั้นสุดท้าย"
   },
   "views_dot_Home_dot_Page_dot_2812648978": {
-    "string": "Featured"
+    "string": "แนะนำ"
   },
   "views_dot_Home_dot_Page_dot_3347022999": {
-    "string": "Shop sale"
+    "string": "ขายหน้าร้าน"
   },
   "views_dot_Home_dot_Page_dot_3813745889": {
-    "string": "Shop by category"
+    "string": "เลือกซื้อตามหมวดหมู่"
   },
   "views_dot_Home_dot_Page_dot_4153800196": {
-    "string": "Up to 70% off sale"
+    "string": "ลดสูงสุด 70%"
   },
   "views_dot_Product_dot_Other_dot_3212906417": {
-    "string": "Other products in this category"
+    "string": "สินค้าอื่น ๆ ในหมวดหมู่นี้"
   },
   "views_dot_Search_dot_Page_dot_2865432515": {
-    "string": "Search term:"
+    "string": "คำที่ต้องการค้นหา"
   }
 }

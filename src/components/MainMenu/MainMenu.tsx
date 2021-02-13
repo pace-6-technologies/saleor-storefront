@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { commonMessages } from "@temp/intl";
 import { useAuth, useCart } from "@saleor/sdk";
 
@@ -23,6 +23,7 @@ import * as appPaths from "../../app/routes";
 import { maybe } from "../../core/utils";
 import NavDropdown from "./NavDropdown";
 import { TypedMainMenuQuery } from "./queries";
+import { ContextLocalization, localeNames } from "../Locale/Locale";
 
 import cartImg from "../../images/cart.svg";
 import hamburgerHoverImg from "../../images/hamburger-hover.svg";
@@ -44,9 +45,10 @@ interface MainMenuProps {
 
 const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
   const overlayContext = useContext(OverlayContext);
-
+  const [context] = React.useContext(ContextLocalization);
   const { user, signOut } = useAuth();
   const { items } = useCart();
+  const useintl = useIntl();
 
   const handleSignOut = () => {
     signOut();
@@ -197,6 +199,36 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
                                       {...commonMessages.logOut}
                                     />
                                   </li>
+
+                                  <span
+                                    style={{
+                                      width: "80%",
+                                    }}
+                                  >
+                                    <MenuDropdown
+                                      head={
+                                        <FormattedMessage
+                                          {...commonMessages.language}
+                                        />
+                                      }
+                                      content={
+                                        <ul className="main-menu__dropdown">
+                                          {Object.entries(localeNames).map(
+                                            ([key, val]) =>
+                                              useintl.locale !== key && (
+                                                <li
+                                                  key={key}
+                                                  onClick={() => context(key)}
+                                                  data-test="desktopMenuLangauge"
+                                                >
+                                                  {val}
+                                                </li>
+                                              )
+                                          )}
+                                        </ul>
+                                      }
+                                    />
+                                  </span>
                                 </ul>
                               }
                             />
@@ -255,6 +287,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
                                 />
                               </Link>
                             </li>
+
                             <li data-test="desktopMenuOrderHistoryLink">
                               <Link to={appPaths.orderHistoryUrl}>
                                 <FormattedMessage
@@ -275,6 +308,36 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
                             >
                               <FormattedMessage {...commonMessages.logOut} />
                             </li>
+
+                            <span
+                              style={{
+                                width: "80%",
+                              }}
+                            >
+                              <MenuDropdown
+                                head={
+                                  <FormattedMessage
+                                    {...commonMessages.language}
+                                  />
+                                }
+                                content={
+                                  <ul className="main-menu__dropdown">
+                                    {Object.entries(localeNames).map(
+                                      ([key, val]) =>
+                                        useintl.locale !== key && (
+                                          <li
+                                            key={key}
+                                            onClick={() => context(key)}
+                                            data-test="desktopMenuLangauge"
+                                          >
+                                            {val}
+                                          </li>
+                                        )
+                                    )}
+                                  </ul>
+                                }
+                              />
+                            </span>
                           </ul>
                         }
                       />

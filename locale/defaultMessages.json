@@ -17,6 +17,10 @@
   "@next_dot_components_dot_atoms_dot_DropdownSelect_dot_DropdownSelect_dot_3280510613": {
     "string": "Sort by:"
   },
+  "@next_dot_components_dot_atoms_dot_OfflinePlaceholder_dot_OfflinePlaceholder_dot_2175471916": {
+    "context": "offline placeholder",
+    "string": "OFFLINE :("
+  },
   "@next_dot_components_dot_molecules_dot_AccountMenuMobile_dot_AccountMenuMobile_dot_2132071990": {
     "string": "Go to"
   },
@@ -101,26 +105,26 @@
   "@next_dot_components_dot_molecules_dot_ResetPasswordForm_dot_ResetPasswordForm_dot_4028609483": {
     "string": "Reset your password"
   },
-  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_1139500589": {
-    "string": "Country"
-  },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_1363074570": {
     "string": "Address line 1"
   },
+  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2098800374": {
+    "string": "Zipcode"
+  },
+  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_20991540": {
+    "string": "countryArea"
+  },
+  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2388181533": {
+    "string": "cityArea"
+  },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_253031977": {
     "string": "City"
-  },
-  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2796540622": {
-    "string": "ZIP/Postal Code"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_2950411968": {
     "string": "Company Name (Optional)"
   },
   "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_3121963259": {
     "string": "Address line 2"
-  },
-  "@next_dot_components_dot_organisms_dot_AddressForm_dot_AddressFormContent_dot_404705399": {
-    "string": "State/province"
   },
   "@next_dot_components_dot_organisms_dot_AddressGridSelector_dot_AddressGridSelector_dot_2132027491": {
     "string": "address"
@@ -161,6 +165,29 @@
     "context": "Adyen payment gateway error",
     "string": "Unknown payment submission error occured."
   },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3173718889": {
+    "string": "My Cart"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_332948942": {
+    "context": "button",
+    "string": "Proceed to Checkout"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3330213154": {
+    "context": "cart sidebar title",
+    "string": "Your cart is empty"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_3452230111": {
+    "context": "button",
+    "string": "Gotomycart"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_36913639": {
+    "context": "button",
+    "string": "CONTINUE SHOPPING"
+  },
+  "@next_dot_components_dot_organisms_dot_CartSidebar_dot_CartSidebar_dot_4121934554": {
+    "context": "cart sidebar description",
+    "string": "You haven’t added anything to your bag. We’re sure you’ll find something in our store"
+  },
   "@next_dot_components_dot_organisms_dot_CartSummary_dot_CartSummary_dot_2088494495": {
     "string": "Cart Summary"
   },
@@ -197,11 +224,16 @@
   "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_2999163789": {
     "string": "Your order number is"
   },
-  "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_3364990704": {
-    "string": "We’ve emailed you an order confirmation, and we’ll notify you when the order has been shipped."
-  },
   "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_3752098833": {
     "string": "ORDER DETAILS"
+  },
+  "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_messages_dot_unconfirmed": {
+    "context": "thank you subtitle",
+    "string": "Your order has been placed, it needs to be confirmed by the staff, we'll send you an email when it's done."
+  },
+  "@next_dot_components_dot_organisms_dot_ThankYou_dot_ThankYou_dot_messages_dot_unfulfilled": {
+    "context": "thank you subtitle",
+    "string": "We’ve emailed you an order confirmation, and we’ll notify you when the order has been shipped."
   },
   "@next_dot_components_dot_templates_dot_CartEmpty_dot_CartEmpty_dot_2488840083": {
     "string": "looks empty"
@@ -293,28 +325,6 @@
   "components_dot_NotFound_dot_index_dot_680965574": {
     "string": "We can’t seem to find a page you are looking for!"
   },
-  "components_dot_OverlayManager_dot_Cart_dot_Cart_dot_1316031908": {
-    "string": "My bag,"
-  },
-  "components_dot_OverlayManager_dot_Cart_dot_Cart_dot_1397761112": {
-    "context": "items quantity in cart",
-    "string": "{itemsQuantity,plural,one{{itemsQuantity} item} other{{itemsQuantity} items}}"
-  },
-  "components_dot_OverlayManager_dot_Cart_dot_Cart_dot_2426849470": {
-    "string": "Go to my bag"
-  },
-  "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_3515754810": {
-    "string": "Continue Shopping"
-  },
-  "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_4121934554": {
-    "string": "You haven’t added anything to your bag. We’re sure you’ll find something in our store"
-  },
-  "components_dot_OverlayManager_dot_Cart_dot_Empty_dot_966560142": {
-    "string": "Your bag is empty"
-  },
-  "components_dot_OverlayManager_dot_Cart_dot_ProductList_dot_3897981513": {
-    "string": "Qty: {quantity}"
-  },
   "components_dot_OverlayManager_dot_Login_dot_ForgottenPassword_dot_1214263298": {
     "string": "Have you forgotten your password?"
   },
@@ -330,14 +340,14 @@
   "components_dot_OverlayManager_dot_Login_dot_RegisterForm_dot_590842025": {
     "string": "New user has been created"
   },
-  "components_dot_OverlayManager_dot_Login_dot_index_dot_282922692": {
-    "string": "Saleor account"
-  },
   "components_dot_OverlayManager_dot_Login_dot_index_dot_3254057623": {
     "string": "Register new account"
   },
   "components_dot_OverlayManager_dot_Login_dot_index_dot_3293735236": {
     "string": "Sign in to account"
+  },
+  "components_dot_OverlayManager_dot_Login_dot_index_dot_3765965771": {
+    "string": "{name} account"
   },
   "components_dot_OverlayManager_dot_Password_dot_index_dot_4028609483": {
     "string": "Reset your password"
@@ -441,6 +451,9 @@
   "intl_dot_commonMessages_dot_home": {
     "string": "Home"
   },
+  "intl_dot_commonMessages_dot_language": {
+    "string": "Language"
+  },
   "intl_dot_commonMessages_dot_lastName": {
     "string": "Last Name"
   },
@@ -489,8 +502,23 @@
   "intl_dot_commonMessages_dot_promoCode": {
     "string": "Promo code"
   },
+  "intl_dot_commonMessages_dot_provideCityAddress": {
+    "string": "Please provide city address."
+  },
+  "intl_dot_commonMessages_dot_provideCityAreaAddress": {
+    "string": "Please provide city area address."
+  },
   "intl_dot_commonMessages_dot_provideEmailAddress": {
     "string": "Please provide email address."
+  },
+  "intl_dot_commonMessages_dot_provideFirstNameAddress": {
+    "string": "Please provide Firstname address."
+  },
+  "intl_dot_commonMessages_dot_provideLastNameAddress": {
+    "string": "Please provide Lastname address."
+  },
+  "intl_dot_commonMessages_dot_providePhoneAddress": {
+    "string": "Please provide Phone number."
   },
   "intl_dot_commonMessages_dot_purchaseAvailableOn": {
     "string": "Will become available for purchase on {date} at {time}"
@@ -597,21 +625,6 @@
   },
   "userAccount_dot_views_dot_OrderDetails_dot_Page_dot_624688748": {
     "string": "Go back to Order History"
-  },
-  "views_dot_Home_dot_Page_dot_2366307429": {
-    "string": "Final reduction"
-  },
-  "views_dot_Home_dot_Page_dot_2812648978": {
-    "string": "Featured"
-  },
-  "views_dot_Home_dot_Page_dot_3347022999": {
-    "string": "Shop sale"
-  },
-  "views_dot_Home_dot_Page_dot_3813745889": {
-    "string": "Shop by category"
-  },
-  "views_dot_Home_dot_Page_dot_4153800196": {
-    "string": "Up to 70% off sale"
   },
   "views_dot_Product_dot_Other_dot_3212906417": {
     "string": "Other products in this category"
