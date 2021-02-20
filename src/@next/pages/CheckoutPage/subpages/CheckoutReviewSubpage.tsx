@@ -71,6 +71,9 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
     if (payment?.gateway === "mirumee.payments.adyen") {
       return `Adyen payments`;
     }
+    if (payment?.gateway === "pace6.payments.promptpay") {
+      return `PromptPay`;
+    }
     if (payment?.creditCard) {
       return `Ending in ${payment?.creditCard.lastDigits}`;
     }

@@ -32,6 +32,9 @@ export const PROVIDERS = {
       crossOrigin: "anonymous",
     },
   },
+  PROMTPAY: {
+    label: "PromptPay",
+  },
 };
 export const STATIC_PAGES = [
   {

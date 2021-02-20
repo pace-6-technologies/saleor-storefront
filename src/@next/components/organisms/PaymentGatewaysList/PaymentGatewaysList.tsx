@@ -8,6 +8,7 @@ import {
   DummyPaymentGateway,
   StripePaymentGateway,
   AdyenPaymentGateway,
+  PromptPayGateway,
 } from "..";
 import * as S from "./styles";
 import { IProps } from "./types";
@@ -32,7 +33,6 @@ const PaymentGatewaysList: React.FC<IProps> = ({
     <S.Wrapper>
       {paymentGateways.map(({ id, name, config }, index) => {
         const checked = selectedPaymentGateway === id;
-
         switch (name) {
           case PROVIDERS.BRAINTREE.label:
             return (
@@ -166,7 +166,33 @@ const PaymentGatewaysList: React.FC<IProps> = ({
                 )}
               </div>
             );
-
+          case PROVIDERS.PROMTPAY.label:
+            return (
+              <div key={index}>
+                <S.Tile checked={checked}>
+                  <Radio
+                    data-test="checkoutPaymentGatewayPromptPayInput"
+                    name="payment-method"
+                    value="promptpay"
+                    checked={checked}
+                    onChange={() =>
+                      selectPaymentGateway && selectPaymentGateway(id)
+                    }
+                    customLabel
+                  >
+                    <span data-test="checkoutPaymentGatewayAdyenName">
+                      {name}
+                    </span>
+                  </Radio>
+                </S.Tile>
+                {checked && (
+                  <PromptPayGateway
+                    formRef={formRef}
+                    processPayment={(token: any) => processPayment(id, token)}
+                  />
+                )}
+              </div>
+            );
           default:
             return null;
         }
