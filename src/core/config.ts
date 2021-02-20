@@ -32,7 +32,7 @@ export const PROVIDERS = {
       crossOrigin: "anonymous",
     },
   },
-  PROMTPAY: {
+  PROMPTPAY: {
     label: "PromptPay",
   },
 };

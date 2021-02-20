@@ -166,7 +166,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
                 )}
               </div>
             );
-          case PROVIDERS.PROMTPAY.label:
+          case PROVIDERS.PROMPTPAY.label:
             return (
               <div key={index}>
                 <S.Tile checked={checked}>
