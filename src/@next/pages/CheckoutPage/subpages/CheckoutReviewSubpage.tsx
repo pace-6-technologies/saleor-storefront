@@ -16,6 +16,7 @@ export interface ISubmitCheckoutData {
   orderNumber: string;
   token: string;
   orderStatus: OrderStatus;
+  amount: string;
 }
 
 export interface ICheckoutReviewSubpageHandles {
@@ -104,6 +105,9 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
             orderStatus: data?.order?.status,
             orderNumber: data?.order?.number,
             token: data?.order?.token,
+            amount:
+              data?.order?.total?.net?.amount ||
+              data?.order?.total?.gross?.amount,
           });
         }
       }

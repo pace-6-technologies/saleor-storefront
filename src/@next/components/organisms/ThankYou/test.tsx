@@ -12,6 +12,7 @@ describe("<ThankYou />", () => {
     orderNumber: "123",
     orderDetails: jest.fn(),
     continueShopping: jest.fn(),
+    amount: "999",
   };
 
   it("exists", () => {
