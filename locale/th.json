@@ -446,6 +446,9 @@
   "intl_dot_checkoutMessages_dot_stepNameShipping": {
     "string": "ตัวเลือกการจัดส่ง"
   },
+  "intl_dot_checkoutMessages_dot_uploadSlip": {
+    "string": "อัปโหลดสลิป"
+  },
   "intl_dot_commonMessages_dot_account": {
     "string": "บัญชี"
   },

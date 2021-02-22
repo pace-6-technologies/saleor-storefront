@@ -418,6 +418,9 @@
   "intl_dot_checkoutMessages_dot_stepNameShipping": {
     "string": "Shipping"
   },
+  "intl_dot_checkoutMessages_dot_uploadSlip": {
+    "string": "UPLOAD SLIP"
+  },
   "intl_dot_commonMessages_dot_account": {
     "string": "Account"
   },
