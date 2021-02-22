@@ -11,3 +11,4 @@ export const builderIoApiKey = process.env.BUILDER_IO_API_KEY;
 
 export const countryCode = process.env.COUNTRY_CODE;
 export const countryName = process.env.COUNTRY_NAME;
+export const promptPayID = process.env.PROMPTPAY_ID;

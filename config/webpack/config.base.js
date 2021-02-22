@@ -122,6 +122,7 @@ module.exports = ({ sourceDir, distDir }) => ({
       SALEOR_CHANNEL_SLUG: "default-channel",
       COUNTRY_CODE: "TH",
       COUNTRY_NAME: "Thailand",
+      PROMPTPAY_ID: "0000000000",
       DEMO_MODE: false,
       GTM_ID: undefined,
       SENTRY_APM: "0",
