@@ -13,6 +13,7 @@ describe("<ThankYou />", () => {
     orderDetails: jest.fn(),
     continueShopping: jest.fn(),
     amount: "999",
+    paymentMethodName: "PromptPay",
   };
 
   it("exists", () => {
