@@ -17,6 +17,7 @@ export interface ISubmitCheckoutData {
   token: string;
   orderStatus: OrderStatus;
   amount: string;
+  qr: string;
 }
 
 export interface ICheckoutReviewSubpageHandles {
@@ -94,6 +95,10 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
         const response = await completeCheckout();
         data = response.data;
         dataError = response.dataError;
+        let qrData = "";
+        if (payment?.gateway === "pace6.payments.promptpay") {
+          qrData = JSON.parse(data?.confirmationData).qr_code;
+        }
         changeSubmitProgress(false);
         const errors = dataError?.error;
         if (errors) {
@@ -108,6 +113,7 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
             amount:
               data?.order?.total?.net?.amount ||
               data?.order?.total?.gross?.amount,
+            qr: qrData,
           });
         }
       }

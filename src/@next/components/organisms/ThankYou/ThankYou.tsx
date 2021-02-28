@@ -4,10 +4,8 @@ import { defineMessages, FormattedMessage } from "react-intl";
 import { Button } from "@components/atoms";
 import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
-import { promptPayID } from "@temp/constants";
 
 import { OrderStatus } from "@saleor/sdk";
-import generateQRString from "promptpay-qr";
 import QRCode from "react-qr-code";
 
 import * as S from "./styles";
@@ -35,12 +33,14 @@ const ThankYou: React.FC<IProps> = ({
   continueShopping,
   orderDetails,
   amount,
+  qr,
 }: IProps) => {
   const [promptpayQR, setPromptpayQR] = useState("");
 
   useEffect(() => {
-    const qrString = generateQRString(promptPayID || "0000000000", { amount });
-    setPromptpayQR(qrString || "0");
+    if (qr !== "") {
+      setPromptpayQR(qr);
+    }
   }, []);
 
   return (
