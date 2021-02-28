@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 
 import { Button } from "@components/atoms";
@@ -6,6 +6,8 @@ import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
 
 import { OrderStatus } from "@saleor/sdk";
+import QRCode from "react-qr-code";
+
 import * as S from "./styles";
 import { IProps } from "./types";
 
@@ -30,7 +32,17 @@ const ThankYou: React.FC<IProps> = ({
   orderNumber,
   continueShopping,
   orderDetails,
+  amount,
+  qr,
 }: IProps) => {
+  const [promptpayQR, setPromptpayQR] = useState("");
+
+  useEffect(() => {
+    if (qr !== "") {
+      setPromptpayQR(qr);
+    }
+  }, []);
+
   return (
     <Container data-test="thankYouView">
       <S.Wrapper>
@@ -52,6 +64,7 @@ const ThankYou: React.FC<IProps> = ({
               : messages.unfulfilled)}
           />
         </S.Paragraph>
+        {promptpayQR && <QRCode value={promptpayQR} />}
         <S.Buttons>
           <Button
             testingContext="continueShoppingButton"

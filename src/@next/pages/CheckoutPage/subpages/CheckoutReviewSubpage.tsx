@@ -16,6 +16,8 @@ export interface ISubmitCheckoutData {
   orderNumber: string;
   token: string;
   orderStatus: OrderStatus;
+  amount: string;
+  qr: string;
 }
 
 export interface ICheckoutReviewSubpageHandles {
@@ -71,6 +73,9 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
     if (payment?.gateway === "mirumee.payments.adyen") {
       return `Adyen payments`;
     }
+    if (payment?.gateway === "pace6.payments.promptpay") {
+      return `PromptPay`;
+    }
     if (payment?.creditCard) {
       return `Ending in ${payment?.creditCard.lastDigits}`;
     }
@@ -90,6 +95,10 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
         const response = await completeCheckout();
         data = response.data;
         dataError = response.dataError;
+        let qrData = "";
+        if (payment?.gateway === "pace6.payments.promptpay") {
+          qrData = JSON.parse(data?.confirmationData).qr_code;
+        }
         changeSubmitProgress(false);
         const errors = dataError?.error;
         if (errors) {
@@ -101,6 +110,10 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
             orderStatus: data?.order?.status,
             orderNumber: data?.order?.number,
             token: data?.order?.token,
+            amount:
+              data?.order?.total?.net?.amount ||
+              data?.order?.total?.gross?.amount,
+            qr: qrData,
           });
         }
       }
