@@ -17,6 +17,7 @@ storiesOf("@components/organisms/ThankYou", module)
       amount="999"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
+      paymentMethodName="PromptPay"
     />
   ))
   .add("with order unfulfilled", () => (
@@ -26,6 +27,7 @@ storiesOf("@components/organisms/ThankYou", module)
       amount="999"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
+      paymentMethodName="PromptPay"
     />
   ))
   .add("with order unconfirmed", () => (
@@ -35,5 +37,6 @@ storiesOf("@components/organisms/ThankYou", module)
       amount="999"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
+      paymentMethodName="PromptPay"
     />
   ));

@@ -6,7 +6,6 @@ import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
 import { promptPayID } from "@temp/constants";
 
-
 import { OrderStatus } from "@saleor/sdk";
 import generateQRString from "promptpay-qr";
 import QRCode from "react-qr-code";
@@ -58,12 +57,13 @@ const ThankYou: React.FC<IProps> = ({
 
   const onChangeUpload = (e: any) => {
     uploadSlipPayment({
-      params: { file: e?.target.files[0] },
+      params: { file: e?.target.files[0], orderNumber },
       callback: (response: any) => {
         console.log(response);
         // GO TO orderDetails
       },
     });
+    orderDetails();
   };
 
   return (
