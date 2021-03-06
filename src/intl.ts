@@ -166,8 +166,11 @@ export const checkoutMessages = defineMessages({
   addressNextActionName: {
     defaultMessage: "Continue to Shipping",
   },
+  alreadyPaid: {
+    defaultMessage: "Already paid",
+  },
   uploadSlip: {
-    defaultMessage: "UPLOAD SLIP",
+    defaultMessage: "Upload transfer receipt.",
   },
   shippingNextActionName: {
     defaultMessage: "Continue to Payment",

@@ -77,3 +77,23 @@ export const uploadSlipQuery = gql`
     }
   }
 `;
+
+export const getPaymentDetailByTokenQRQuery = gql`
+  query GetPaymentDetailByTokenQR($paymentToken: String) {
+    promptpayPaymentByPaymentToken(paymentToken: $paymentToken) {
+      qrCode
+      paymentProofImageBase64
+      paymentProofUploadNoteOrderId
+      paymentProofUploadNote
+      paymentProofUploadTimestamp
+      payment {
+        id
+        gateway
+        total {
+          amount
+        }
+        chargeStatus
+      }
+    }
+  }
+`;

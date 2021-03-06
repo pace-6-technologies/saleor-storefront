@@ -379,6 +379,9 @@
   "intl_dot_checkoutMessages_dot_addressNextActionName": {
     "string": "Continue to Shipping"
   },
+  "intl_dot_checkoutMessages_dot_alreadyPaid": {
+    "string": "Already paid"
+  },
   "intl_dot_checkoutMessages_dot_billingAddress": {
     "string": "BILLING ADDRESS"
   },
@@ -419,7 +422,7 @@
     "string": "Shipping"
   },
   "intl_dot_checkoutMessages_dot_uploadSlip": {
-    "string": "UPLOAD SLIP"
+    "string": "Upload transfer receipt."
   },
   "intl_dot_commonMessages_dot_account": {
     "string": "Account"
