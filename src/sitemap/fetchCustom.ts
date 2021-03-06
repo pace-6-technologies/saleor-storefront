@@ -9,7 +9,7 @@ import fetch from "isomorphic-fetch";
 //   generateProductUrl,
 // } from "../core/utils";
 
-import { getAddressQuery } from "./queries";
+import { getAddressQuery, getPaymentDetailByTokenQRQuery } from "./queries";
 
 const API_URL = process.env.API_URI || "/graphql/";
 const DEFAULT_CHANNEL = process.env.SALEOR_CHANNEL_SLUG || "default-channel";
@@ -43,4 +43,13 @@ export const getAddress = async ({ params, callback }) => {
   await fetchItems({ query: getAddressQuery, variables: params }, res => {
     callback(res);
   });
+};
+
+export const getPaymentDetailByTokenQR = async ({ params, callback }) => {
+  await fetchItems(
+    { query: getPaymentDetailByTokenQRQuery, variables: params },
+    res => {
+      callback(res);
+    }
+  );
 };
