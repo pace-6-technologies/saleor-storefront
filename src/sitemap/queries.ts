@@ -79,7 +79,7 @@ export const uploadSlipQuery = gql`
 `;
 
 export const getPaymentDetailByTokenQRQuery = gql`
-  query GetPaymentDetailByTokenQR($paymentToken: String) {
+  query getPaymentDetailByTokenQRQuery($paymentToken: String) {
     promptpayPaymentByPaymentToken(paymentToken: $paymentToken) {
       qrCode
       paymentProofImageBase64
