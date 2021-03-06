@@ -15,6 +15,7 @@ const ThankYouPage: React.FC<IProps> = ({}: IProps) => {
     orderNumber,
     orderStatus,
     amount,
+    qr,
     paymentMethodName,
   } = location.state;
   return (
@@ -24,6 +25,7 @@ const ThankYouPage: React.FC<IProps> = ({}: IProps) => {
       orderStatus={orderStatus}
       amount={amount}
       paymentMethodName={paymentMethodName}
+      qr={qr}
       orderDetails={() => history.push(generateGuestOrderDetailsUrl(token))}
     />
   );

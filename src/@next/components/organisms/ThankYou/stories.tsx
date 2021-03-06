@@ -15,6 +15,7 @@ storiesOf("@components/organisms/ThankYou", module)
       orderStatus={OrderStatus.UNFULFILLED}
       orderNumber="#341414"
       amount="999"
+      qr="qr_code"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
       paymentMethodName="PromptPay"
@@ -25,6 +26,7 @@ storiesOf("@components/organisms/ThankYou", module)
       orderStatus={OrderStatus.UNFULFILLED}
       orderNumber="#341414"
       amount="999"
+      qr="qr_code"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
       paymentMethodName="PromptPay"
@@ -35,6 +37,7 @@ storiesOf("@components/organisms/ThankYou", module)
       orderStatus={OrderStatus.UNCONFIRMED}
       orderNumber="#341414"
       amount="999"
+      qr="qr_code"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
       paymentMethodName="PromptPay"

@@ -7,4 +7,5 @@ export interface IProps {
   orderDetails: () => void;
   amount: string;
   paymentMethodName: string;
+  qr: string;
 }

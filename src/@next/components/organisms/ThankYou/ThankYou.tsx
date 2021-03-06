@@ -1,16 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 
 import { Button } from "@components/atoms";
 import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
-import { promptPayID } from "@temp/constants";
 
 import { OrderStatus } from "@saleor/sdk";
-import generateQRString from "promptpay-qr";
 import QRCode from "react-qr-code";
-
-import { uploadSlipPayment } from "../../../../sitemap/gqlUpload";
 
 import * as S from "./styles";
 import { IProps } from "./types";
@@ -38,43 +34,18 @@ const ThankYou: React.FC<IProps> = ({
   orderDetails,
   amount,
   paymentMethodName,
+  qr,
 }: IProps) => {
   const [promptpayQR, setPromptpayQR] = useState("");
-  const inputFile = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    if (paymentMethodName === "PromptPay") {
-      const qrString = generateQRString(promptPayID || "0000000000", {
-        amount,
-      });
-      setPromptpayQR(qrString || "0");
+    if (qr !== "") {
+      setPromptpayQR(qr);
     }
   }, []);
 
-  const handleUploadSlipPayment = () => {
-    return inputFile && inputFile?.current?.click();
-  };
-
-  const onChangeUpload = (e: any) => {
-    uploadSlipPayment({
-      params: { file: e?.target.files[0], orderNumber },
-      callback: (response: any) => {
-        console.log(response);
-        // GO TO orderDetails
-      },
-    });
-    orderDetails();
-  };
-
   return (
     <Container data-test="thankYouView">
-      <input
-        ref={inputFile as any}
-        hidden
-        type="file"
-        accept="image/*"
-        onChange={onChangeUpload}
-      />
       <S.Wrapper>
         <S.ThankYouHeader>
           <FormattedMessage defaultMessage="Thank you" />
@@ -96,16 +67,6 @@ const ThankYou: React.FC<IProps> = ({
         </S.Paragraph>
         <S.Paragraph>
           {promptpayQR && <QRCode value={promptpayQR} />}
-          <S.Buttons>
-            <Button
-              testingContext="uploadSlipPaymentButton"
-              onClick={handleUploadSlipPayment}
-              color="primary"
-              fullWidth
-            >
-              <FormattedMessage {...checkoutMessages.uploadSlip} />
-            </Button>
-          </S.Buttons>
         </S.Paragraph>
         <S.Buttons>
           <Button

@@ -18,6 +18,7 @@ export interface ISubmitCheckoutData {
   orderStatus: OrderStatus;
   amount: string;
   paymentMethodName: string;
+  qr: string;
 }
 
 export interface ICheckoutReviewSubpageHandles {
@@ -95,6 +96,10 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
         const response = await completeCheckout();
         data = response.data;
         dataError = response.dataError;
+        let qrData = "";
+        if (payment?.gateway === "pace6.payments.promptpay") {
+          qrData = JSON.parse(data?.confirmationData).qr_code;
+        }
         changeSubmitProgress(false);
         const errors = dataError?.error;
         if (errors) {
@@ -110,6 +115,7 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
               data?.order?.total?.net?.amount ||
               data?.order?.total?.gross?.amount,
             paymentMethodName: getPaymentMethodDescription(),
+            qr: qrData,
           });
         }
       }
