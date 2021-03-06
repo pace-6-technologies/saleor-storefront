@@ -10,7 +10,14 @@ import { IProps } from "./types";
 const ThankYouPage: React.FC<IProps> = ({}: IProps) => {
   const location = useLocation();
   const history = useHistory();
-  const { token, orderNumber, orderStatus, amount, qr } = location.state;
+  const {
+    token,
+    orderNumber,
+    orderStatus,
+    amount,
+    qr,
+    paymentMethodName,
+  } = location.state;
   return (
     <ThankYou
       continueShopping={() => history.push(BASE_URL)}
@@ -19,6 +26,7 @@ const ThankYouPage: React.FC<IProps> = ({}: IProps) => {
       amount={amount}
       qr={qr}
       orderDetails={() => history.push(generateGuestOrderDetailsUrl(token))}
+      paymentMethodName={paymentMethodName}
     />
   );
 };

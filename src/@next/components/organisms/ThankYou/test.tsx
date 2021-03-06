@@ -14,6 +14,7 @@ describe("<ThankYou />", () => {
     continueShopping: jest.fn(),
     amount: "999",
     qr: "qr_code",
+    paymentMethodName: "promptpay",
   };
 
   it("exists", () => {
