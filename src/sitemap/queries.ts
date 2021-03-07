@@ -83,7 +83,7 @@ export const getPaymentDetailByTokenQRQuery = gql`
     promptpayPaymentByPaymentToken(paymentToken: $paymentToken) {
       qrCode
       paymentProofImageBase64
-      paymentProofUploadNoteOrderId
+      paymentProofUploadNoteOrderToken
       paymentProofUploadNote
       paymentProofUploadTimestamp
       payment {
