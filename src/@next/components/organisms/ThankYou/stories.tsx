@@ -18,6 +18,7 @@ storiesOf("@components/organisms/ThankYou", module)
       qr="qr_code"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
+      paymentMethodName="PromptPay"
     />
   ))
   .add("with order unfulfilled", () => (
@@ -28,6 +29,7 @@ storiesOf("@components/organisms/ThankYou", module)
       qr="qr_code"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
+      paymentMethodName="PromptPay"
     />
   ))
   .add("with order unconfirmed", () => (
@@ -38,5 +40,6 @@ storiesOf("@components/organisms/ThankYou", module)
       qr="qr_code"
       continueShopping={continueShopping}
       orderDetails={orderDetails}
+      paymentMethodName="PromptPay"
     />
   ));

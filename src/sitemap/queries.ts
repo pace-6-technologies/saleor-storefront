@@ -66,3 +66,34 @@ export const getAddressQuery = gql`
     }
   }
 `;
+
+export const uploadSlipQuery = gql`
+  query GetCategories($file: Upload!) {
+    singleUpload(file: $file) {
+      filename
+      mimetype
+      encoding
+      url
+    }
+  }
+`;
+
+export const getPaymentDetailByTokenQRQuery = gql`
+  query getPaymentDetailByTokenQRQuery($paymentToken: String) {
+    promptpayPaymentByPaymentToken(paymentToken: $paymentToken) {
+      qrCode
+      paymentProofImageBase64
+      paymentProofUploadNoteOrderToken
+      paymentProofUploadNote
+      paymentProofUploadTimestamp
+      payment {
+        id
+        gateway
+        total {
+          amount
+        }
+        chargeStatus
+      }
+    }
+  }
+`;

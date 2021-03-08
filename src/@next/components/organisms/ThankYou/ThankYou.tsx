@@ -33,6 +33,7 @@ const ThankYou: React.FC<IProps> = ({
   continueShopping,
   orderDetails,
   amount,
+  paymentMethodName,
   qr,
 }: IProps) => {
   const [promptpayQR, setPromptpayQR] = useState("");
@@ -64,7 +65,9 @@ const ThankYou: React.FC<IProps> = ({
               : messages.unfulfilled)}
           />
         </S.Paragraph>
-        {promptpayQR && <QRCode value={promptpayQR} />}
+        <S.Paragraph>
+          {promptpayQR && <QRCode value={promptpayQR} />}
+        </S.Paragraph>
         <S.Buttons>
           <Button
             testingContext="continueShoppingButton"
