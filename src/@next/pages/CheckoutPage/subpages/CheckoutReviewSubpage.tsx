@@ -17,6 +17,7 @@ export interface ISubmitCheckoutData {
   token: string;
   orderStatus: OrderStatus;
   amount: string;
+  paymentMethodName: string;
   qr: string;
   paymentMethodName: string;
 }
@@ -120,6 +121,7 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
             amount:
               data?.order?.total?.net?.amount ||
               data?.order?.total?.gross?.amount,
+            paymentMethodName: getPaymentMethodDescription(),
             qr: qrData,
             paymentMethodName: getPaymentMethodDescription(),
           });

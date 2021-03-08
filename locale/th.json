@@ -446,6 +446,12 @@
   "intl_dot_checkoutMessages_dot_stepNameShipping": {
     "string": "ตัวเลือกการจัดส่ง"
   },
+  "intl_dot_checkoutMessages_dot_alreadyPaid": {
+    "string": "จ่ายแล้ว"
+  },
+  "intl_dot_checkoutMessages_dot_uploadSlip": {
+    "string": "อัปโหลดใบเสร็จการโอน"
+  },
   "intl_dot_commonMessages_dot_account": {
     "string": "บัญชี"
   },

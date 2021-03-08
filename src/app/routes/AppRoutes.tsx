@@ -12,12 +12,14 @@ import { CollectionPage } from "../../views/Collection";
 import { HomePage } from "../../views/Home";
 import { ProductPage } from "../../views/Product";
 import { SearchPage } from "../../views/Search";
+import { QRPaymentTokenPage } from "../../views/QRPaymentToken";
 
 import * as paths from "./paths";
 
 export const Routes: React.FC = () => (
   <Switch>
     <Route exact path={paths.baseUrl} component={HomePage} />
+    <Route path={paths.qrPaymentTokenUrl} component={QRPaymentTokenPage} />
     <Route path={paths.searchUrl} component={SearchPage} />
     <Route path={paths.categoryUrl} component={CategoryPage} />
     <Route path={paths.collectionUrl} component={CollectionPage} />

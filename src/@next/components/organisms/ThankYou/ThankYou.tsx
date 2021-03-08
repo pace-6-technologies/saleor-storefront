@@ -34,6 +34,7 @@ const ThankYou: React.FC<IProps> = ({
   continueShopping,
   orderDetails,
   amount,
+  paymentMethodName,
   qr,
   paymentMethodName,
 }: IProps) => {
@@ -72,7 +73,9 @@ const ThankYou: React.FC<IProps> = ({
             style={{ width: "100%", height: "500px" }}
           />
         )}
-        {promptpayQR && <QRCode value={promptpayQR} />}
+        <S.Paragraph>
+          {promptpayQR && <QRCode value={promptpayQR} />}
+        </S.Paragraph>
         <S.Buttons>
           <Button
             testingContext="continueShoppingButton"
