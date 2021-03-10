@@ -1,18 +1,20 @@
-import "./scss/index.scss";
-
+import { builder, BuilderComponent } from "@builder.io/react";
+import Link from "next/link";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
-import { Link } from "react-router-dom";
 import ReactSVG from "react-svg";
+
+import { paths } from "@paths";
+import { builderIoApiKey } from "@temp/constants";
 import { commonMessages } from "@temp/intl";
 
-import { builderIoApiKey } from "@temp/constants";
-import { builder, BuilderComponent } from "@builder.io/react";
-
-import { baseUrl } from "../../app/routes";
+import backImg from "../../images/arrow-back.svg";
 import NavItem, { INavItem } from "./NavItem";
 
-import backImg from "../../images/arrow-back.svg";
+import "./scss/index.scss";
+
+// import { baseUrl } from "../../app/routes";
+
 // import logoImg from "../../images/logo.svg";
 
 builder.init(builderIoApiKey as string);
@@ -79,26 +81,22 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
         ) : (
           <>
             <li className="side-nav__menu-item side-nav__menu-item--parent">
-              <Link
-                to={baseUrl}
-                className="side-nav__menu-item-logo"
-                onClick={hideOverlay}
-              >
-                <BuilderComponent model="logo" />
-
-                {/* <ReactSVG path={logoImg} /> */}
+              <Link href={paths.home}>
+                <a className="side-nav__menu-item-logo">
+                  <BuilderComponent model="logo" />
+                </a>
               </Link>
-              <span className="side-nav__menu-item-close" onClick={hideOverlay}>
+              <span className="side-nav__menu-item-close">
                 <span />
               </span>
             </li>
             <li className="side-nav__menu-item">
-              <Link
-                to={baseUrl}
-                className="side-nav__menu-item-link"
-                onClick={hideOverlay}
-              >
-                <FormattedMessage {...commonMessages.home} />
+              <Link href={paths.home}>
+                <a className="side-nav__menu-item-link">
+                  <span onClick={hideOverlay}>
+                    <FormattedMessage {...commonMessages.home} />
+                  </span>
+                </a>
               </Link>
             </li>
           </>

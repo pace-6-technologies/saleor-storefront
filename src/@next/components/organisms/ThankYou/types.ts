@@ -1,4 +1,5 @@
 import { OrderStatus } from "@saleor/sdk";
+import { UrlObject } from "url";
 
 export interface IProps {
   orderStatus: OrderStatus | null;
@@ -8,4 +9,6 @@ export interface IProps {
   amount: string;
   paymentMethodName: string;
   qr: string;
+  continueShoppingUrl: string | UrlObject;
+  orderDetailsUrl: string | UrlObject;
 }

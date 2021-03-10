@@ -1,23 +1,22 @@
-import "./scss/index.scss";
 import "@builder.io/widgets";
 
+// import { FormattedMessage, useIntl } from "react-intl";
+import { builder, BuilderComponent } from "@builder.io/react";
 // import classNames from "classnames";
 import * as React from "react";
-// import { FormattedMessage, useIntl } from "react-intl";
-// import { Link } from "react-router-dom";
-import { BuilderComponent, builder } from "@builder.io/react";
+
 import { builderIoApiKey } from "@temp/constants";
 
+import { structuredData } from "../../core/SEO/Homepage/structuredData";
 // import { Button, Loader, ProductsFeatured } from "../../components";
 // import { generateCategoryUrl } from "../../core/utils";
-
 import {
   ProductsList_categories,
-  ProductsList_shop,
   ProductsList_collection_backgroundImage,
+  ProductsList_shop,
 } from "./gqlTypes/ProductsList";
 
-import { structuredData } from "../../core/SEO/Homepage/structuredData";
+import "./scss/index.scss";
 
 // import noPhotoImg from "../../images/no-photo.svg";
 
@@ -71,14 +70,16 @@ const Page: React.FC<{
           ) : (
             categoriesExist() && (
               <Link
-                to={generateCategoryUrl(
+                href={generateCategoryUrl(
                   categories.edges[0].node.id,
                   categories.edges[0].node.name
                 )}
               >
-                <Button testingContext="homepageHeroActionButton">
-                  <FormattedMessage defaultMessage="Shop sale" />
-                </Button>
+                <a>
+                  <Button testingContext="homepageHeroActionButton">
+                    <FormattedMessage defaultMessage="Shop sale" />
+                  </Button>
+                </a>
               </Link>
             )
           )}
@@ -97,25 +98,27 @@ const Page: React.FC<{
               {categories.edges.map(({ node: category }) => (
                 <div key={category.id}>
                   <Link
-                    to={generateCategoryUrl(category.id, category.name)}
+                    href={generateCategoryUrl(category.id, category.name)}
                     key={category.id}
                   >
-                    <div
-                      className={classNames(
-                        "home-page__categories__list__image",
-                        {
-                          "home-page__categories__list__image--no-photo": !category.backgroundImage,
-                        }
-                      )}
-                      style={{
-                        backgroundImage: `url(${
-                          category.backgroundImage
-                            ? category.backgroundImage.url
-                            : noPhotoImg
-                        })`,
-                      }}
-                    />
-                    <h3>{category.name}</h3>
+                    <a>
+                      <div
+                        className={classNames(
+                          "home-page__categories__list__image",
+                          {
+                            "home-page__categories__list__image--no-photo": !category.backgroundImage,
+                          }
+                        )}
+                        style={{
+                          backgroundImage: `url(${
+                            category.backgroundImage
+                              ? category.backgroundImage.url
+                              : noPhotoImg
+                          })`,
+                        }}
+                      />
+                      <h3>{category.name}</h3>
+                    </a>
                   </Link>
                 </div>
               ))}

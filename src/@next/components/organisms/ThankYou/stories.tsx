@@ -1,12 +1,8 @@
 import { OrderStatus } from "@saleor/sdk";
-import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 
 import { ThankYou } from ".";
-
-const continueShopping = action("Continue shopping has been clicked");
-const orderDetails = action("Order details has been clicked");
 
 storiesOf("@components/organisms/ThankYou", module)
   .addParameters({ component: ThankYou })
@@ -16,9 +12,11 @@ storiesOf("@components/organisms/ThankYou", module)
       orderNumber="#341414"
       amount="999"
       qr="qr_code"
-      continueShopping={continueShopping}
-      orderDetails={orderDetails}
+      continueShopping={() => {}}
+      orderDetails={() => {}}
       paymentMethodName="PromptPay"
+      continueShoppingUrl="/"
+      orderDetailsUrl="/order/xyz"
     />
   ))
   .add("with order unfulfilled", () => (
@@ -27,9 +25,11 @@ storiesOf("@components/organisms/ThankYou", module)
       orderNumber="#341414"
       amount="999"
       qr="qr_code"
-      continueShopping={continueShopping}
-      orderDetails={orderDetails}
+      continueShopping={() => {}}
+      orderDetails={() => {}}
       paymentMethodName="PromptPay"
+      continueShoppingUrl="/"
+      orderDetailsUrl="/order/xyz"
     />
   ))
   .add("with order unconfirmed", () => (
@@ -38,8 +38,10 @@ storiesOf("@components/organisms/ThankYou", module)
       orderNumber="#341414"
       amount="999"
       qr="qr_code"
-      continueShopping={continueShopping}
-      orderDetails={orderDetails}
+      continueShopping={() => {}}
+      orderDetails={() => {}}
       paymentMethodName="PromptPay"
+      continueShoppingUrl="/"
+      orderDetailsUrl="/order/xyz"
     />
   ));

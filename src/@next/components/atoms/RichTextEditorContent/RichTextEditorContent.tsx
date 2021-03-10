@@ -1,38 +1,48 @@
-import EditorJS, {
+import type EditorJS from "@editorjs/editorjs";
+import {
   OutputData,
   ToolConstructable,
   ToolSettings,
 } from "@editorjs/editorjs";
-import Header from "@editorjs/header";
-import List from "@editorjs/list";
-import Quote from "@editorjs/quote";
 import createGenericInlineTool from "editorjs-inline-tool";
 import React from "react";
 
 import * as S from "./styles";
 
 export interface RichTextEditorContentProps {
-  jsonData: string;
+  jsonData?: string;
 }
 
-export const tools: Record<string, ToolConstructable | ToolSettings> = {
-  header: {
-    class: Header,
-    config: {
-      defaultLevel: 1,
-      levels: [1, 2, 3],
+export const getTools = async (): Promise<
+  Record<string, ToolConstructable | ToolSettings>
+> => {
+  const [Header, List, Quote] = await Promise.all([
+    /* eslint-disable global-require */
+    require("@editorjs/header"),
+    require("@editorjs/list"),
+    require("@editorjs/quote"),
+    /* eslint-enable global-require */
+  ]);
+
+  return {
+    header: {
+      class: Header,
+      config: {
+        defaultLevel: 1,
+        levels: [1, 2, 3],
+      },
     },
-  },
-  list: List,
-  quote: Quote,
-  strikethrough: createGenericInlineTool({
-    sanitize: {
-      s: {},
-    },
-    shortcut: "CMD+S",
-    tagName: "s",
-    toolboxIcon: "",
-  }),
+    list: List,
+    quote: Quote,
+    strikethrough: createGenericInlineTool({
+      sanitize: {
+        s: {},
+      },
+      shortcut: "CMD+S",
+      tagName: "s",
+      toolboxIcon: "",
+    }),
+  };
 };
 
 export const RichTextEditorContent: React.FC<RichTextEditorContentProps> = ({
@@ -41,20 +51,24 @@ export const RichTextEditorContent: React.FC<RichTextEditorContentProps> = ({
   const editor = React.useRef<EditorJS>();
   const editorContainer = React.useRef<HTMLDivElement>(null);
 
-  const data: OutputData = JSON.parse(jsonData);
+  const data: OutputData | null = jsonData ? JSON.parse(jsonData) : null;
 
   React.useEffect(() => {
     if (data && editorContainer.current) {
-      editor.current = new EditorJS({
-        data,
-        holder: editorContainer.current,
-        readOnly: true,
-        tools,
-      });
+      (async () => {
+        const Editor: typeof EditorJS = await require("@editorjs/editorjs"); // eslint-disable-line  global-require
+
+        editor.current = new Editor({
+          data,
+          holder: editorContainer.current!,
+          readOnly: true,
+          tools: await getTools(),
+        });
+      })();
     }
 
     return editor.current?.destroy;
   }, [jsonData]);
 
-  return <S.Content ref={editorContainer} />;
+  return jsonData ? <S.Content ref={editorContainer} /> : null;
 };

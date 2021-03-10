@@ -62,10 +62,9 @@ jobs:
 
       - name: Run build
         env:
-          # Use custom API_URI or the default one
-          API_URI: ${{ steps.api_uri.outputs.custom_api_uri || 'https://master.staging.saleor.rocks/graphql/' }}
+          NEXT_PUBLIC_API_URI: ${{ steps.api_uri.outputs.custom_api_uri || secrets.API_URI }}
         run: |
-          npm run build
+          npm run build:export
 
       - name: Run build storybook
         env:

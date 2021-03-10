@@ -1,32 +1,30 @@
+import { NextPage } from "next";
+import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Button } from "@components/atoms";
 import { FormattedMessage } from "react-intl";
-import { checkoutMessages } from "@temp/intl";
-import { Container } from "@components/templates";
 import QRCode from "react-qr-code";
-import * as S from "./styles";
+
+import { Button } from "@components/atoms";
+import { Container } from "@components/templates";
+import { checkoutMessages } from "@temp/intl";
 
 import { getPaymentDetailByTokenQR } from "../../sitemap/fetchCustom";
+import * as S from "./styles";
 
-interface paramsType {
-  token: string;
-}
-
-const Page: React.FC = () => {
-  const { token } = useParams<paramsType>();
+const Page: NextPage = () => {
+  const router = useRouter();
   const inputFile = useRef<HTMLFormElement>(null);
   const [orderDetail, setOrderDetail] = useState(null);
 
   useEffect(() => {
     getPaymentDetailByTokenQR({
-      params: { paymentToken: token },
+      params: { paymentToken: router?.query?.slug },
       callback: (response: any) => {
         if (!response) return;
         setOrderDetail(response);
       },
     });
-  }, [token]);
+  }, [router?.query?.slug]);
 
   const handleUploadSlipPayment = () => {
     return inputFile && inputFile?.current?.click();

@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
 import { useCheckout } from "@saleor/sdk";
+import React, { useRef } from "react";
 
 export interface IPromptPayGatewayProps {
   formRef?: React.RefObject<HTMLFormElement>;
