@@ -1,9 +1,11 @@
+import { useAuth } from "@saleor/sdk";
+import { useRouter } from "next/router";
 import React from "react";
 
-import { useAuth } from "@saleor/sdk";
 import { Loader } from "@components/atoms";
 import { demoMode, builderIoApiKey } from "@temp/constants";
 import { BuilderComponent, builder } from "@builder.io/react";
+
 import {
   // Footer,
   MainMenu,
@@ -13,13 +15,16 @@ import {
 } from "../components";
 import ShopProvider from "../components/ShopProvider";
 import "../globalStyles/scss/index.scss";
-import { Routes } from "./routes";
 
 import Notifications from "./Notifications";
 
+import "../globalStyles/scss/index.scss";
+
 builder.init(builderIoApiKey as string);
 
-const App: React.FC = () => {
+
+const App: React.FC = ({ children }) => {
+  const { pathname } = useRouter();
   const { tokenRefreshing, tokenVerifying } = useAuth();
 
   if (tokenRefreshing || tokenVerifying) {
@@ -28,11 +33,10 @@ const App: React.FC = () => {
 
   return (
     <ShopProvider>
-      <OverlayProvider>
+      <OverlayProvider pathname={pathname}>
         <MetaConsumer />
         <MainMenu demoMode={demoMode} />
-        <Routes />
-        {/* <Footer /> */}
+          {children}
         <BuilderComponent model="footer" />
         <OverlayManager />
         <Notifications />

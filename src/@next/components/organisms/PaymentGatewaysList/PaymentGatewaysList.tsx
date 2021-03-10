@@ -4,6 +4,7 @@ import { ErrorMessage, Radio } from "@components/atoms";
 import { PROVIDERS } from "@temp/core/config";
 
 import {
+  AdyenPaymentGateway,
   BraintreePaymentGateway,
   DummyPaymentGateway,
   StripePaymentGateway,

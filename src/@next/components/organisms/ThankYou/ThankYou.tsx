@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { OrderStatus } from "@saleor/sdk";
+import Link from "next/link";
 import { defineMessages, FormattedMessage } from "react-intl";
 
 import { Button } from "@components/atoms";
 import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
 
-import { OrderStatus } from "@saleor/sdk";
 import QRCode from "react-qr-code";
 
 import * as S from "./styles";
@@ -35,6 +36,8 @@ const ThankYou: React.FC<IProps> = ({
   amount,
   paymentMethodName,
   qr,
+  continueShoppingUrl,
+  orderDetailsUrl,
 }: IProps) => {
   const [promptpayQR, setPromptpayQR] = useState("");
 
@@ -69,21 +72,20 @@ const ThankYou: React.FC<IProps> = ({
           {promptpayQR && <QRCode value={promptpayQR} />}
         </S.Paragraph>
         <S.Buttons>
-          <Button
-            testingContext="continueShoppingButton"
-            onClick={continueShopping}
-            color="secondary"
-            fullWidth
-          >
-            <FormattedMessage {...checkoutMessages.continueShopping} />
-          </Button>
-          <Button
-            testingContext="gotoOrderDetailsButton"
-            onClick={orderDetails}
-            fullWidth
-          >
-            <FormattedMessage defaultMessage="ORDER DETAILS" />
-          </Button>
+          <Link href={continueShoppingUrl}>
+            <Button
+              testingContext="continueShoppingButton"
+              color="secondary"
+              fullWidth
+            >
+              <FormattedMessage {...checkoutMessages.continueShopping} />
+            </Button>
+          </Link>
+          <Link href={orderDetailsUrl}>
+            <Button testingContext="gotoOrderDetailsButton" fullWidth>
+              <FormattedMessage defaultMessage="ORDER DETAILS" />
+            </Button>
+          </Link>
         </S.Buttons>
       </S.Wrapper>
     </Container>

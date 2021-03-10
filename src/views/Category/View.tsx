@@ -1,12 +1,13 @@
+import { NextPage } from "next";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import { RouteComponentProps } from "react-router";
+import { StringParam, useQueryParam } from "use-query-params";
 
+import { Loader, OfflinePlaceholder } from "@components/atoms";
+import { channelSlug } from "@temp/constants";
 import { prodListHeaderCommonMsg } from "@temp/intl";
 import { IFilters } from "@types";
-import { channelSlug } from "@temp/constants";
-import { StringParam, useQueryParam } from "use-query-params";
-import { Loader, OfflinePlaceholder } from "@components/atoms";
+
 import { MetaWrapper, NotFound } from "../../components";
 import NetworkStatus from "../../components/NetworkStatus";
 import { PRODUCTS_PER_PAGE } from "../../core/config";
@@ -17,13 +18,9 @@ import {
 } from "../../core/utils";
 import Page from "./Page";
 import {
-  TypedCategoryProductsQuery,
   TypedCategoryProductsDataQuery,
+  TypedCategoryProductsQuery,
 } from "./queries";
-
-type ViewProps = RouteComponentProps<{
-  id: string;
-}>;
 
 export const FilterQuerySet = {
   encode(valueObj) {
@@ -45,7 +42,11 @@ export const FilterQuerySet = {
   },
 };
 
-export const View: React.FC<ViewProps> = ({ match }) => {
+export type ViewProps = {
+  query: { slug: string; id: string };
+};
+
+export const View: NextPage<ViewProps> = ({ query: { id } }) => {
   const [sort, setSort] = useQueryParam("sortBy", StringParam);
   const [attributeFilters, setAttributeFilters] = useQueryParam(
     "filters",
@@ -98,7 +99,7 @@ export const View: React.FC<ViewProps> = ({ match }) => {
       ? convertToAttributeScalar(filters.attributes)
       : {},
     channel: channelSlug,
-    id: getGraphqlIdFromDBId(match.params.id, "Category"),
+    id: getGraphqlIdFromDBId(id, "Category"),
     sortBy: convertSortByFromString(filters.sortBy),
   };
 

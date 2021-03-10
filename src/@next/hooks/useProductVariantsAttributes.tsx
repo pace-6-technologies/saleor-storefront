@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-
 import { ProductDetails_product_variants } from "@saleor/sdk/lib/queries/gqlTypes/ProductDetails";
+import { useEffect, useState } from "react";
 
 import { IProductVariantsAttributes } from "@types";
 
 export const useProductVariantsAttributes = (
   productVariants: ProductDetails_product_variants[]
 ): IProductVariantsAttributes => {
-  const [productVariantsAttributes, setProductVariantsAttributes] = useState<
-    IProductVariantsAttributes
-  >({});
+  const [
+    productVariantsAttributes,
+    setProductVariantsAttributes,
+  ] = useState<IProductVariantsAttributes>({});
 
   useEffect(() => {
     const variantsAttributes: IProductVariantsAttributes = {};

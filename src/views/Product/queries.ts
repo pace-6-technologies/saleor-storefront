@@ -1,4 +1,5 @@
 import gql from "graphql-tag";
+
 import { TypedQuery } from "../../core/queries";
 import {
   ProductDetails,
@@ -116,7 +117,7 @@ export const productDetailsQuery = gql`
     product(id: $id, channel: $channel) {
       ...BasicProductFields
       ...ProductPricingField
-      descriptionJson
+      description
       category {
         id
         name

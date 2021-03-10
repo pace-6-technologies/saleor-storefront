@@ -90,13 +90,13 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         env:
-          API_URI: ${{ steps.api_uri.outputs.custom_api_uri || secrets.API_URI }}
+          NEXT_PUBLIC_API_URI: ${{ steps.api_uri.outputs.custom_api_uri || secrets.API_URI }}
           APP_MOUNT_URI: ${{ secrets.APP_MOUNT_URI }}
           CYPRESS_API_URI: ${{ secrets.CYPRESS_API_URI }}
           CYPRESS_USER_NAME: ${{ secrets.CYPRESS_USER_NAME }}
           CYPRESS_USER_PASSWORD: ${{ secrets.CYPRESS_USER_PASSWORD }}
         with:
-          build: npm run build
+          build: npm run build:export
           start: npx http-server -a localhost -p 3000 dist --proxy http://localhost:3000/\?
           wait-on: http://localhost:3000/
           wait-on-timeout: 120
