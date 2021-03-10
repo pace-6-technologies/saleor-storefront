@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
 import { OrderStatus } from "@saleor/sdk";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
+import QRCode from "react-qr-code";
 
 import { Button } from "@components/atoms";
 import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
-
-import QRCode from "react-qr-code";
 
 import * as S from "./styles";
 import { IProps } from "./types";

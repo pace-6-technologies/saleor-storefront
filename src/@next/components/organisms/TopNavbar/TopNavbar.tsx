@@ -2,18 +2,17 @@
 // are not yet implemented (ie wishlist)
 // Replace it with MainMenu component once all the blocks are finished
 
+import { builder, BuilderComponent } from "@builder.io/react";
 import React from "react";
 import Media from "react-responsive";
 
 import { Icon, NavLink } from "@components/atoms";
 import { largeScreen, smallScreen } from "@styles/constants";
-import { maybe } from "@utils/misc";
 import { builderIoApiKey } from "@temp/constants";
-import { builder, BuilderComponent } from "@builder.io/react";
+import { maybe } from "@utils/misc";
 
 // import LogoSmall from "images/logo-small.svg";
 // import Logo from "images/logo.svg";
-
 import { Dropdown } from "./Dropdown";
 import * as S from "./styles";
 import { IProps } from "./types";

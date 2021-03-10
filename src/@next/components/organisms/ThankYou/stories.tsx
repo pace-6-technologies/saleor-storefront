@@ -25,7 +25,8 @@ storiesOf("@components/organisms/ThankYou", module)
       orderNumber="#341414"
       amount="999"
       qr="qr_code"
-     continueShopping={() => {}}
+      continueShopping={() => {}}
+      orderDetails={() => {}}
       paymentMethodName="PromptPay"
       continueShoppingUrl="/"
       orderDetailsUrl="/order/xyz"
@@ -37,6 +38,7 @@ storiesOf("@components/organisms/ThankYou", module)
       orderNumber="#341414"
       amount="999"
       qr="qr_code"
+      continueShopping={() => {}}
       orderDetails={() => {}}
       paymentMethodName="PromptPay"
       continueShoppingUrl="/"

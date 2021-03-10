@@ -17,6 +17,7 @@ export const paths = {
   product: `${baseUrl}product/${slugUrl}`,
   search: `${baseUrl}search`,
   wishlist: `${baseUrl}wishlist`,
+  qrPaymentTokenUrl: `${baseUrl}payments/${slugUrl}/complete`,
   /**
    * Checkout
    */

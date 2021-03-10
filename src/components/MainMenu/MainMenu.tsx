@@ -1,16 +1,15 @@
+import { builder, BuilderComponent } from "@builder.io/react";
 import { useAuth, useCart } from "@saleor/sdk";
+import classNames from "classnames";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-
 import Media from "react-media";
 import ReactSVG from "react-svg";
-import { builder, BuilderComponent } from "@builder.io/react";
 
 import { DemoBanner } from "@components/atoms";
-import classNames from "classnames";
 import { paths } from "@paths";
-import { channelSlug , builderIoApiKey} from "@temp/constants";
+import { builderIoApiKey, channelSlug } from "@temp/constants";
 import { commonMessages } from "@temp/intl";
 
 import { maybe } from "../../core/utils";
@@ -28,9 +27,9 @@ import {
   OverlayTheme,
   OverlayType,
 } from "..";
+import { ContextLocalization, localeNames } from "../Locale/Locale";
 import NavDropdown from "./NavDropdown";
 import { TypedMainMenuQuery } from "./queries";
-import { ContextLocalization, localeNames } from "../Locale/Locale";
 
 import "./scss/index.scss";
 import {

@@ -173,7 +173,6 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       },
       city: address?.city.city || address?.city,
     };
-
     changeSubmitProgress(true);
     const { dataError } = await setShippingAddress(
       {
@@ -184,7 +183,6 @@ const CheckoutAddressSubpageWithRef: RefForwardingComponent<
       shippingEmail
     );
     const errors = dataError?.error;
-    // console.log("errors :", errors);
     if (errors) {
       setShippingErrors(errors);
       changeSubmitProgress(false);

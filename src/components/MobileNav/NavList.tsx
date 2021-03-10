@@ -1,23 +1,23 @@
+import { builder, BuilderComponent } from "@builder.io/react";
 import Link from "next/link";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import ReactSVG from "react-svg";
 
-import { builderIoApiKey } from "@temp/constants";
-import { builder, BuilderComponent } from "@builder.io/react";
-
-// import { baseUrl } from "../../app/routes";
-
-// import logoImg from "../../images/logo.svg";
-
-builder.init(builderIoApiKey as string);
 import { paths } from "@paths";
+import { builderIoApiKey } from "@temp/constants";
 import { commonMessages } from "@temp/intl";
 
 import backImg from "../../images/arrow-back.svg";
 import NavItem, { INavItem } from "./NavItem";
 
 import "./scss/index.scss";
+
+// import { baseUrl } from "../../app/routes";
+
+// import logoImg from "../../images/logo.svg";
+
+builder.init(builderIoApiKey as string);
 
 interface NavListProps {
   items: INavItem[];

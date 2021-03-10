@@ -7,12 +7,10 @@ export const serviceWorkerTimeout =
 export const demoMode = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
 export const channelSlug = process.env.NEXT_PUBLIC_SALEOR_CHANNEL_SLUG;
 
-export const builderIoApiKey = process.env.BUILDER_IO_API_KEY;
+export const builderIoApiKey = process.env.NEXT_PUBLIC_BUILDER_IO_API_KEY;
 
-export const countryCode = process.env.COUNTRY_CODE;
-export const countryName = process.env.COUNTRY_NAME;
-export const promptPayID = process.env.PROMPTPAY_ID;
-  parseInt(process.env.SERVICE_WORKER_TIMEOUT || "", 10) || 60 * 1000;
+export const countryCode = process.env.NEXT_PUBLIC_COUNTRY_CODE;
+export const countryName = process.env.NEXT_PUBLIC_COUNTRY_NAME;
+export const promptPayID = process.env.NEXT_PUBLIC_PROMPTPAY_ID;
 
 export const ssrMode = typeof window === "undefined";
-

@@ -1,14 +1,13 @@
+import { debounce, uniqBy } from "lodash";
 import React, { useCallback, useState } from "react";
 import { useIntl } from "react-intl";
-import { debounce, uniqBy } from "lodash";
 
 import { InputSelect, TextField } from "@components/molecules";
 import { commonMessages } from "@temp/intl";
 
+import { getAddress } from "../../../../sitemap/fetchCustom";
 import * as S from "./styles";
 import { PropsWithFormik } from "./types";
-
-import { getAddress } from "../../../../sitemap/fetchCustom";
 
 export const AddressFormContent: React.FC<PropsWithFormik> = ({
   formRef,

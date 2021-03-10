@@ -8,11 +8,11 @@ import fetch from "isomorphic-fetch";
 //   generateCollectionUrl,
 //   generateProductUrl,
 // } from "../core/utils";
-
 import { getAddressQuery, getPaymentDetailByTokenQRQuery } from "./queries";
 
-const API_URL = process.env.API_URI || "/graphql/";
-const DEFAULT_CHANNEL = process.env.SALEOR_CHANNEL_SLUG || "default-channel";
+const API_URL = process.env.NEXT_PUBLIC_API_URI || "/graphql/";
+const DEFAULT_CHANNEL =
+  process.env.NEXT_PUBLIC_SALEOR_CHANNEL_SLUG || "default-channel";
 
 const fetchItems = async ({ query, variables = {} }, callback: any) => {
   const client = new ApolloClient({
@@ -55,14 +55,19 @@ export const getAddress = async ({ params, callback }) => {
 };
 
 export const getPaymentDetailByTokenQR = async ({ params, callback }) => {
-  await fetchQRbyToken(
-    { query: getPaymentDetailByTokenQRQuery, variables: params },
-    res => {
-      if (res?.promptpayPaymentByPaymentToken) {
-        callback(res?.promptpayPaymentByPaymentToken);
-      } else {
-        callback(null);
+  try {
+    await fetchQRbyToken(
+      { query: getPaymentDetailByTokenQRQuery, variables: params },
+      res => {
+        if (res?.promptpayPaymentByPaymentToken) {
+          callback(res?.promptpayPaymentByPaymentToken);
+        } else {
+          callback(null);
+        }
       }
-    }
-  );
+    );
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.warn("err :>> ", err);
+  }
 };

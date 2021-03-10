@@ -5,5 +5,8 @@ export type IProps = {
     orderNumber?: string;
     token?: string;
     orderStatus?: OrderStatus;
+    amount: string;
+    qr: string;
+    paymentMethodName: string;
   };
 };

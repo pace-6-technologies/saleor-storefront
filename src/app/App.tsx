@@ -1,10 +1,10 @@
+import { builder, BuilderComponent } from "@builder.io/react";
 import { useAuth } from "@saleor/sdk";
 import { useRouter } from "next/router";
 import React from "react";
 
 import { Loader } from "@components/atoms";
-import { demoMode, builderIoApiKey } from "@temp/constants";
-import { BuilderComponent, builder } from "@builder.io/react";
+import { builderIoApiKey, demoMode } from "@temp/constants";
 
 import {
   // Footer,
@@ -14,14 +14,11 @@ import {
   OverlayProvider,
 } from "../components";
 import ShopProvider from "../components/ShopProvider";
-import "../globalStyles/scss/index.scss";
-
 import Notifications from "./Notifications";
 
 import "../globalStyles/scss/index.scss";
 
 builder.init(builderIoApiKey as string);
-
 
 const App: React.FC = ({ children }) => {
   const { pathname } = useRouter();
@@ -36,7 +33,7 @@ const App: React.FC = ({ children }) => {
       <OverlayProvider pathname={pathname}>
         <MetaConsumer />
         <MainMenu demoMode={demoMode} />
-          {children}
+        {children}
         <BuilderComponent model="footer" />
         <OverlayManager />
         <Notifications />

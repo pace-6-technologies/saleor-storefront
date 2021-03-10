@@ -1,28 +1,26 @@
-import "./scss/index.scss";
 import "@builder.io/widgets";
 
+// import { FormattedMessage, useIntl } from "react-intl";
+import { builder, BuilderComponent } from "@builder.io/react";
 // import classNames from "classnames";
 import * as React from "react";
-// import { FormattedMessage, useIntl } from "react-intl";
-// import { Link } from "react-router-dom";
-import { BuilderComponent, builder } from "@builder.io/react";
+
 import { builderIoApiKey } from "@temp/constants";
 
+import { structuredData } from "../../core/SEO/Homepage/structuredData";
 // import { Button, Loader, ProductsFeatured } from "../../components";
 // import { generateCategoryUrl } from "../../core/utils";
-
 import {
   ProductsList_categories,
   ProductsList_collection_backgroundImage,
   ProductsList_shop,
 } from "./gqlTypes/ProductsList";
 
-import { structuredData } from "../../core/SEO/Homepage/structuredData";
+import "./scss/index.scss";
 
 // import noPhotoImg from "../../images/no-photo.svg";
 
 builder.init(builderIoApiKey as string);
-import "./scss/index.scss";
 
 const Page: React.FC<{
   loading: boolean;

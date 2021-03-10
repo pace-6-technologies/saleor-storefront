@@ -123,13 +123,7 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
             qr: qrData,
           });
         }
-      //   onSubmitSuccess(CheckoutStep.Review, {
-      //     id: data?.order?.id,
-      //     orderStatus: data?.order?.status,
-      //     orderNumber: data?.order?.number,
-      //     token: data?.order?.token,
-      //   });
-      // }
+      }
     }
   });
 
