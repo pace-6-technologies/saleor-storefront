@@ -44,7 +44,6 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
   ref
 ) => {
   const { checkout, payment, completeCheckout } = useCheckout();
-
   const [errors, setErrors] = useState<IFormError[]>([]);
 
   const checkoutShippingAddress = checkout?.shippingAddress
@@ -75,6 +74,9 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
     if (payment?.gateway === "pace6.payments.promptpay") {
       return `PromptPay`;
     }
+    if (payment?.gateway === "pace6.payments.omise.promptpay") {
+      return `Omise PromptPay`;
+    }
     if (payment?.creditCard) {
       return `Ending in ${payment?.creditCard.lastDigits}`;
     }
@@ -104,6 +106,9 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
         let qrData = "";
         if (payment?.gateway === "pace6.payments.promptpay") {
           qrData = JSON.parse(data?.confirmationData).qr_code;
+        }
+        if (payment?.gateway === "pace6.payments.omise.promptpay") {
+          qrData = JSON.parse(data?.confirmationData).qr_code_url;
         }
         changeSubmitProgress(false);
         const errors = dataError?.error;
