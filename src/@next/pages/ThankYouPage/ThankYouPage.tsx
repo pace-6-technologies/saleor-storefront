@@ -27,7 +27,6 @@ const ThankYouPage: React.FC<IProps> = ({}: IProps) => {
       paymentMethodName={paymentMethodName}
       qr={qr}
       orderDetails={() => history.push(generateGuestOrderDetailsUrl(token))}
-      paymentMethodName={paymentMethodName}
     />
   );
 };
