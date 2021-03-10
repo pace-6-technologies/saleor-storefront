@@ -15,7 +15,6 @@ describe("<ThankYou />", () => {
     amount: "999",
     paymentMethodName: "PromptPay",
     qr: "qr_code",
-    paymentMethodName: "promptpay",
   };
 
   it("exists", () => {

@@ -4,7 +4,6 @@ import { defineMessages, FormattedMessage } from "react-intl";
 import { Button } from "@components/atoms";
 import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
-import { PROVIDERS } from "@temp/core/config";
 
 import { OrderStatus } from "@saleor/sdk";
 import QRCode from "react-qr-code";
@@ -36,11 +35,11 @@ const ThankYou: React.FC<IProps> = ({
   amount,
   paymentMethodName,
   qr,
-  paymentMethodName,
 }: IProps) => {
   const [promptpayQR, setPromptpayQR] = useState("");
+
   useEffect(() => {
-    if (qr !== "" && PROVIDERS.PROMPTPAY.label === paymentMethodName) {
+    if (qr !== "") {
       setPromptpayQR(qr);
     }
   }, []);
@@ -66,13 +65,6 @@ const ThankYou: React.FC<IProps> = ({
               : messages.unfulfilled)}
           />
         </S.Paragraph>
-        {PROVIDERS.OMISE_PROMPTPAY.label === paymentMethodName && (
-          <img
-            alt="omise_qr"
-            src={qr}
-            style={{ width: "100%", height: "500px" }}
-          />
-        )}
         <S.Paragraph>
           {promptpayQR && <QRCode value={promptpayQR} />}
         </S.Paragraph>

@@ -35,9 +35,6 @@ export const PROVIDERS = {
   PROMPTPAY: {
     label: "PromptPay",
   },
-  OMISE_PROMPTPAY: {
-    label: "Omise PromptPay",
-  },
 };
 export const STATIC_PAGES = [
   {

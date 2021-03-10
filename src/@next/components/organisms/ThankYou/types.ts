@@ -8,5 +8,4 @@ export interface IProps {
   amount: string;
   paymentMethodName: string;
   qr: string;
-  paymentMethodName: string;
 }
