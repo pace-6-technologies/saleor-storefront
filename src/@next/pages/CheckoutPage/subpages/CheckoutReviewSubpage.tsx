@@ -75,6 +75,12 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
     if (payment?.gateway === "pace6.payments.promptpay") {
       return `PromptPay`;
     }
+    if (
+      payment?.gateway === "pace6.payments.omise.credit_card" &&
+      payment?.creditCard
+    ) {
+      return `Omise Credit Card Ending in ${payment?.creditCard.lastDigits}`;
+    }
     if (payment?.creditCard) {
       return `Ending in ${payment?.creditCard.lastDigits}`;
     }

@@ -9,6 +9,7 @@ const ERRORS = {
   expirationMonth: null,
   expirationYear: null,
   number: null,
+  name: null,
 };
 
 const PROPS = {
@@ -19,6 +20,7 @@ const PROPS = {
     ccCsc: "CVC",
     ccExp: "Expiry Date",
     ccNumber: "Number",
+    ccName: "NAME",
   },
 };
 

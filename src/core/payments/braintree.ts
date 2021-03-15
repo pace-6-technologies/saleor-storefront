@@ -10,6 +10,7 @@ export interface ICardInputs {
   ccCsc: string;
   ccExp: string;
   ccNumber: string;
+  ccName: string;
 }
 
 export type CardError = { field?: string; message: string } | null;
@@ -28,6 +29,7 @@ export interface ICardErrors {
   expirationMonth: CardError;
   expirationYear: CardError;
   number: CardError;
+  ccName?: CardError;
 }
 
 export interface ErrorData {

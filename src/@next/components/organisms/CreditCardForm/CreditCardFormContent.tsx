@@ -27,9 +27,15 @@ export const CreditCardFormContent: React.FC<PropsWithFormik> = ({
     cvv: ccCscError,
     expirationMonth: expirationMonthError,
     expirationYear: expirationYearError,
+    ccName: ccNameError,
   },
   disabled,
-  labelsText: { ccCsc: ccCscText, ccExp: ccExpText, ccNumber: ccNumberText },
+  labelsText: {
+    ccCsc: ccCscText,
+    ccExp: ccExpText,
+    ccNumber: ccNumberText,
+    ccName: ccNameText,
+  },
   handleSubmit,
   handleChange,
   values,
@@ -46,9 +52,19 @@ export const CreditCardFormContent: React.FC<PropsWithFormik> = ({
       onSubmit={handleSubmit}
       data-test="creditCardForm"
     >
+      <S.PaymentInput style={{ marginTop: "12px" }}>
+        <TextField
+          autoFocus
+          autoComplete="cc-name"
+          name="ccName"
+          type="text"
+          maxLength={40}
+          {...basicInputProps(ccNameText, [ccNameError], values.ccName)}
+        />
+      </S.PaymentInput>
+
       <S.PaymentInput>
         <NumberFormat
-          autoFocus
           autoComplete="cc-number"
           format="#### #### #### ####"
           name="ccNumber"

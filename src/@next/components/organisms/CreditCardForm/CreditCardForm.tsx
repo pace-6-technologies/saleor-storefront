@@ -8,6 +8,7 @@ const INITIAL_CARD_VALUES_STATE = {
   ccCsc: "",
   ccExp: "",
   ccNumber: "",
+  ccName: "",
 };
 
 export const CreditCardForm: React.FC<IProps> = ({

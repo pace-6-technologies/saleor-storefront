@@ -15,12 +15,14 @@ describe("<CreditCardForm />", () => {
     ccCsc: "CVC",
     ccExp: "Expiry Date",
     ccNumber: "Number",
+    ccName: "NAME",
   };
 
   const VALUES = {
     ccCsc: "",
     ccExp: "",
     ccNumber: "444",
+    ccName: "cc name",
   };
 
   const DEFAULT_PROPS = {
@@ -29,6 +31,7 @@ describe("<CreditCardForm />", () => {
       expirationMonth: null,
       expirationYear: null,
       number: null,
+      ccName: null,
     },
     disabled: false,
     handleChange: jest.fn(),
@@ -84,6 +87,7 @@ describe("<CreditCardForm />", () => {
           message: "Expiration year is invalid",
         },
         number: { field: "number", message: "Wrong number" },
+        ccName: { field: "text", message: "Wrong text" },
       };
 
       const inputs = renderCreditCardForm({

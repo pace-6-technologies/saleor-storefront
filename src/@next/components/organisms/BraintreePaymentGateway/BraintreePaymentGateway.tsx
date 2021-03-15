@@ -117,6 +117,7 @@ const BraintreePaymentGateway: React.FC<IProps> = ({
         formId={formId}
         cardErrors={cardErrors.fieldErrors}
         labelsText={{
+          ccName: "Name",
           ccCsc: "CVC",
           ccExp: "ExpiryDate",
           ccNumber: "Number",

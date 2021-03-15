@@ -8,6 +8,7 @@ interface ILabelsText {
   ccCsc: string;
   ccExp: string;
   ccNumber: string;
+  ccName?: string;
 }
 export interface IFormikProps {
   handleChange: (e: React.ChangeEvent) => void;
