@@ -89,47 +89,34 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
 
   useImperativeHandle(ref, () => async () => {
     changeSubmitProgress(true);
-    let data;
-    let dataError;
     if (payment?.gateway === "mirumee.payments.adyen") {
       paymentGatewayFormRef.current?.dispatchEvent(
         new Event("submitComplete", { cancelable: true })
       );
+    }
+
+    const response = await completeCheckout();
+    const { dataError, data } = response;
+    changeSubmitProgress(false);
+
+    if (dataError) {
+      setErrors(dataError as any);
     } else {
-      const response = await completeCheckout();
-      data = response.data;
-      dataError = response.dataError;
-      changeSubmitProgress(false);
-      const errors = dataError?.error;
-      if (errors) {
-        setErrors(errors);
-      } else {
-        const response = await completeCheckout();
-        data = response.data;
-        dataError = response.dataError;
-        let qrData = "";
-        if (payment?.gateway === "pace6.payments.promptpay") {
-          qrData = JSON.parse(data?.confirmationData).qr_code;
-        }
-        changeSubmitProgress(false);
-        const errors = dataError?.error;
-        if (errors) {
-          setErrors(errors);
-        } else {
-          setErrors([]);
-          onSubmitSuccess(CheckoutStep.Review, {
-            id: data?.order?.id,
-            orderStatus: data?.order?.status,
-            orderNumber: data?.order?.number,
-            token: data?.order?.token,
-            amount:
-              data?.order?.total?.net?.amount ||
-              data?.order?.total?.gross?.amount,
-            paymentMethodName: getPaymentMethodDescription(),
-            qr: qrData,
-          });
-        }
+      setErrors([]);
+      let qrData = "";
+      if (payment?.gateway === "pace6.payments.promptpay") {
+        qrData = JSON.parse(data?.confirmationData).qr_code;
       }
+      onSubmitSuccess(CheckoutStep.Review, {
+        id: data?.order?.id,
+        orderStatus: data?.order?.status,
+        orderNumber: data?.order?.number,
+        token: data?.order?.token,
+        amount:
+          data?.order?.total?.net?.amount || data?.order?.total?.gross?.amount,
+        paymentMethodName: getPaymentMethodDescription(),
+        qr: qrData,
+      });
     }
   });
 

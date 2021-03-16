@@ -22,6 +22,7 @@ const INITIAL_CARD_ERROR_STATE = {
     expirationMonth: null,
     expirationYear: null,
     number: null,
+    name: null,
   },
   nonFieldError: "",
 };
@@ -35,7 +36,7 @@ export const OmiseCreditPaymentGateway = ({
   onError,
 }) => {
   const [submitErrors, setSubmitErrors] = useState([]);
-  const { payment, createPayment } = useCheckout();
+  const { payment } = useCheckout();
   const [test, setTest] = useState(null);
   const public_Key = config.find(({ field }) => field === "api_public_key")
     ?.value;
@@ -74,17 +75,6 @@ export const OmiseCreditPaymentGateway = ({
       bodyCreditCard,
       (statusCode, { card, id }) => {
         if (statusCode !== 200) {
-          return;
-        }
-        if (id && card?.brand && card?.last_digits) {
-          processPayment(id, {
-            brand: card?.brand,
-            expMonth: card?.exp_month || null,
-            expYear: card?.exp_year || null,
-            firstDigits: null,
-            lastDigits: card?.last_digits,
-          });
-        } else {
           const braintreePayloadErrors = [
             {
               message:
@@ -93,7 +83,15 @@ export const OmiseCreditPaymentGateway = ({
           ];
           setSubmitErrors(braintreePayloadErrors);
           onError(braintreePayloadErrors);
+          return;
         }
+        processPayment(id, {
+          brand: card?.brand,
+          expMonth: card?.exp_month || null,
+          expYear: card?.exp_year || null,
+          firstDigits: null,
+          lastDigits: card?.last_digits,
+        });
       }
     );
   };
