@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { useCheckout } from "@saleor/sdk";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import { ErrorMessage } from "@components/atoms";
 import { CreditCardForm } from "@components/organisms";
@@ -14,7 +14,6 @@ import {
   PaymentData,
 } from "../../../../core/payments/braintree";
 import { maybe, removeEmptySpaces } from "../../../../core/utils";
-import { MutationPaymentCreate } from "../../../../sitemap/queries";
 import * as S from "./styles";
 
 const INITIAL_CARD_ERROR_STATE = {
@@ -36,8 +35,7 @@ export const OmiseCreditPaymentGateway = ({
   onError,
 }) => {
   const [submitErrors, setSubmitErrors] = useState([]);
-  const { payment } = useCheckout();
-  const mutateRef = useRef();
+  const { payment, createPayment } = useCheckout();
   const [test, setTest] = useState(null);
   const public_Key = config.find(({ field }) => field === "api_public_key")
     ?.value;
@@ -79,35 +77,13 @@ export const OmiseCreditPaymentGateway = ({
           return;
         }
         if (id && card?.brand && card?.last_digits) {
-          const mutateFn = mutateRef?.current;
-          if (mutateFn) {
-            mutateFn({
-              variables: {
-                checkoutId: parse_data_checkout?.id,
-                token: parse_data_checkout?.token,
-                amount: payment?.total.amount,
-              },
-            })
-              .then(results => {
-                processPayment(id, {
-                  brand: card?.brand,
-                  expMonth: card?.exp_month || null,
-                  expYear: card?.exp_year || null,
-                  firstDigits: null,
-                  lastDigits: card?.last_digits,
-                });
-              })
-              .catch(() => {
-                const braintreePayloadErrors = [
-                  {
-                    message:
-                      "Payment submission error. Braintree gateway returned no token in payload.",
-                  },
-                ];
-                setSubmitErrors(braintreePayloadErrors);
-                onError(braintreePayloadErrors);
-              });
-          }
+          processPayment(id, {
+            brand: card?.brand,
+            expMonth: card?.exp_month || null,
+            expYear: card?.exp_year || null,
+            firstDigits: null,
+            lastDigits: card?.last_digits,
+          });
         } else {
           const braintreePayloadErrors = [
             {
@@ -145,12 +121,6 @@ export const OmiseCreditPaymentGateway = ({
 
   return (
     <div data-test="braintreePaymentGateway">
-      <MutationPaymentCreate>
-        {mutatePayment => {
-          mutateRef.current = mutatePayment;
-          return <></>;
-        }}
-      </MutationPaymentCreate>
       <CreditCardForm
         formRef={formRef}
         formId={formId}

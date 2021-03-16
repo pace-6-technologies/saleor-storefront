@@ -1,7 +1,5 @@
 import gql from "graphql-tag";
 
-import { TypedMutation } from "../core/mutations";
-
 export const getProductsQuery = gql`
   query GetProducts($cursor: String, $perPage: Int, $channel: String) {
     products(after: $cursor, first: $perPage, channel: $channel) {
@@ -99,30 +97,3 @@ export const getPaymentDetailByTokenQRQuery = gql`
     }
   }
 `;
-
-const mutationPaymentCreate = gql`
-  mutation mutationPaymentCreate(
-    $checkoutId: ID!
-    $token: String!
-    $amount: PositiveDecimal!
-  ) {
-    checkoutPaymentCreate(
-      checkoutId: $checkoutId
-      input: {
-        gateway: "pace6.payments.omise.credit_card"
-        token: $token
-        amount: $amount
-      }
-    ) {
-      payment {
-        id
-        chargeStatus
-      }
-      paymentErrors {
-        field
-        message
-      }
-    }
-  }
-`;
-export const MutationPaymentCreate = TypedMutation(mutationPaymentCreate);
