@@ -6,6 +6,7 @@ import QRCode from "react-qr-code";
 
 import { Button } from "@components/atoms";
 import { Container } from "@components/templates";
+import { PROVIDERS } from "@temp/core/config";
 import { checkoutMessages } from "@temp/intl";
 
 import * as S from "./styles";
@@ -41,7 +42,7 @@ const ThankYou: React.FC<IProps> = ({
   const [promptpayQR, setPromptpayQR] = useState("");
 
   useEffect(() => {
-    if (qr !== "") {
+    if (qr !== "" && PROVIDERS.PROMPTPAY.label === paymentMethodName) {
       setPromptpayQR(qr);
     }
   }, []);
@@ -68,7 +69,16 @@ const ThankYou: React.FC<IProps> = ({
           />
         </S.Paragraph>
         <S.Paragraph>
-          {promptpayQR && <QRCode value={promptpayQR} />}
+          {PROVIDERS.OMISE_PROMPTPAY.label === paymentMethodName && (
+            <img
+              alt="omise_qr"
+              src={qr}
+              style={{ width: "100%", height: "500px" }}
+            />
+          )}
+          {PROVIDERS.PROMPTPAY.label === paymentMethodName && (
+            <QRCode value={promptpayQR} />
+          )}
         </S.Paragraph>
         <S.Buttons>
           <Link href={continueShoppingUrl}>

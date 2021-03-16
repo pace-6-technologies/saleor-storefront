@@ -194,6 +194,33 @@ const PaymentGatewaysList: React.FC<IProps> = ({
                 )}
               </div>
             );
+          case PROVIDERS.OMISE_PROMPTPAY.label:
+            return (
+              <div key={index}>
+                <S.Tile checked={checked}>
+                  <Radio
+                    data-test="checkoutPaymentGatewayPromptPayInput"
+                    name="payment-method"
+                    value="promptpay"
+                    checked={checked}
+                    onChange={() =>
+                      selectPaymentGateway && selectPaymentGateway(id)
+                    }
+                    customLabel
+                  >
+                    <span data-test="checkoutPaymentGatewayAdyenName">
+                      {name}
+                    </span>
+                  </Radio>
+                </S.Tile>
+                {checked && (
+                  <PromptPayGateway
+                    formRef={formRef}
+                    processPayment={(token: any) => processPayment(id, token)}
+                  />
+                )}
+              </div>
+            );
           case PROVIDERS.OMISE_CREDIT_CARD.label:
             return (
               <div key={index}>

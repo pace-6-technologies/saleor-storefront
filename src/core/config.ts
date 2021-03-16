@@ -36,6 +36,9 @@ export const PROVIDERS = {
   PROMPTPAY: {
     label: "PromptPay",
   },
+  OMISE_PROMPTPAY: {
+    label: "Omise PromptPay",
+  },
   OMISE_CREDIT_CARD: {
     label: "Omise Credit Card",
   },

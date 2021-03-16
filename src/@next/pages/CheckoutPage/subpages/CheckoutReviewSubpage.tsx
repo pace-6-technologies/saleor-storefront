@@ -75,6 +75,9 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
     if (payment?.gateway === "pace6.payments.promptpay") {
       return `PromptPay`;
     }
+    if (payment?.gateway === "pace6.payments.omise.promptpay") {
+      return `Omise PromptPay`;
+    }
     if (
       payment?.gateway === "pace6.payments.omise.credit_card" &&
       payment?.creditCard
@@ -106,6 +109,9 @@ const CheckoutReviewSubpageWithRef: RefForwardingComponent<
       let qrData = "";
       if (payment?.gateway === "pace6.payments.promptpay") {
         qrData = JSON.parse(data?.confirmationData).qr_code;
+      }
+      if (payment?.gateway === "pace6.payments.omise.promptpay") {
+        qrData = JSON.parse(data?.confirmationData).qr_code_url;
       }
       onSubmitSuccess(CheckoutStep.Review, {
         id: data?.order?.id,
