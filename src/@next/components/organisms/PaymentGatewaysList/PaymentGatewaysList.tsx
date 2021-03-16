@@ -7,6 +7,7 @@ import {
   AdyenPaymentGateway,
   BraintreePaymentGateway,
   DummyPaymentGateway,
+  OmiseCreditPaymentGateway,
   PromptPayGateway,
   StripePaymentGateway,
 } from "..";
@@ -193,6 +194,40 @@ const PaymentGatewaysList: React.FC<IProps> = ({
                 )}
               </div>
             );
+          case PROVIDERS.OMISE_CREDIT_CARD.label:
+            return (
+              <div key={index}>
+                <S.Tile checked={checked}>
+                  <Radio
+                    data-test="checkoutPaymentGatewayBraintreeInput"
+                    name="payment-method"
+                    value="credit-card"
+                    checked={checked}
+                    onChange={() =>
+                      selectPaymentGateway && selectPaymentGateway(id)
+                    }
+                    customLabel
+                  >
+                    <span data-test="checkoutPaymentGatewayBraintreeName">
+                      {name}
+                    </span>
+                  </Radio>
+                </S.Tile>
+                {checked && (
+                  <OmiseCreditPaymentGateway
+                    config={config}
+                    formRef={formRef}
+                    formId={formId}
+                    processPayment={(token: any, cardData: any) =>
+                      processPayment(id, token, cardData)
+                    }
+                    errors={errors}
+                    onError={onError}
+                  />
+                )}
+              </div>
+            );
+
           default:
             return null;
         }
